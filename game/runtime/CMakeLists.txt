@@ -4,9 +4,16 @@ file(GLOB_RECURSE HEADER_FILES *.h *.hpp)
 file(GLOB_RECURSE SOURCE_FILES *.cpp *.c)
 set(AllFile ${HEADER_FILES} ${SOURCE_FILES})
 
-include(sdl2-config.cmake)
+if(UNIX)
+    find_package(SDL2 REQUIRED)
+elseif(WIN32)
+    include(sdl2-config.cmake)
+else()
+    message("unknow platform")
+endif()
 
 add_library(${TARGET_NAME} ${AllFile})
+
 
 target_link_libraries(
     ${TARGET_NAME}

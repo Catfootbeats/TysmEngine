@@ -16,7 +16,14 @@ file(GLOB_RECURSE SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/game/main/*.cpp 
     ${PROJECT_SOURCE_DIR}/game/main/*.c)
 
-include(sdl2-config.cmake)
+if(UNIX)
+    find_package(SDL2 REQUIRED)
+elseif(WIN32)
+    include(sdl2-config.cmake)
+else()
+    message("unknow platform")
+endif()
+
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
 # 对文件下分组

@@ -1,0 +1,16 @@
+set(TARGET_NAME tysm-runtime)
+
+file(GLOB_RECURSE HEADER_FILES *.h *.hpp)
+file(GLOB_RECURSE SOURCE_FILES *.cpp *.c)
+set(AllFile ${HEADER_FILES} ${SOURCE_FILES})
+
+include(sdl2-config.cmake)
+
+add_library(${TARGET_NAME} ${AllFile})
+
+target_link_libraries(
+    ${TARGET_NAME}
+    PRIVATE
+    SDL2::SDL2main
+    SDL2::SDL2
+)

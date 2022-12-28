@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.8)
-project(tysm VERSION 0.1.0)
+project(tysm-game VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 
 # 添加所有子目录到 allSubDir
-list(APPEND allSubDir "src")
+list(APPEND allSubDir "game")
 
 
 # 遍历生成

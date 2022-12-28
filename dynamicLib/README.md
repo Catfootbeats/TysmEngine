@@ -1,1 +1,0 @@
-把dll或so放到build/game目录

@@ -1,5 +1,7 @@
-If you are using Linux or OSX, you need to install SDL2 using your package manager. 
-If you are using Windows. You need to put the SDL2.dll in to build/tysm-game.
-SDL2.dll is in dynamicLib folder.
+Linux和OSX需要用包管理器安装SDL2
 
-I haven't tested it on Mac.(I have no Mac haha)
+Windows则需要把dynamicLib里面的sdl2.dll扔到build/game下面
+
+Mac我没试过
+
+必须用gcc编译器，Windows记得装MinGW-w64的POSIX版

@@ -7,10 +7,14 @@ set(AllFile ${HEADER_FILES} ${SOURCE_FILES})
 if(UNIX)
     find_package(SDL2 REQUIRED)
 elseif(WIN32)
+    #find_package(SDL2 REQUIRED)
     include(sdl2-config.cmake)
 else()
     message("unknow platform")
 endif()
+
+# Log system third party library
+include_directories(./../3rdparty/spdlog/include)
 
 add_library(${TARGET_NAME} ${AllFile})
 

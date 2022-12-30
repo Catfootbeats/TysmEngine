@@ -14,7 +14,8 @@ else()
 endif()
 
 # Log system third party library
-include_directories(./../3rdparty/spdlog/include)
+find_package(spdlog CONFIG REQUIRED)
+# include_directories(./../3rdparty/spdlog/include)
 
 add_library(${TARGET_NAME} ${AllFile})
 
@@ -24,4 +25,6 @@ target_link_libraries(
     PRIVATE
     SDL2::SDL2main
     SDL2::SDL2
+    spdlog::spdlog 
+    spdlog::spdlog_header_only
 )

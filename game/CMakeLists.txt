@@ -24,6 +24,7 @@ else()
     message("unknow platform")
 endif()
 
+find_package(spdlog CONFIG REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
 # 对文件下分组
@@ -44,4 +45,6 @@ target_link_libraries(
     SDL2::SDL2main
     SDL2::SDL2
     tysm-runtime
+    spdlog::spdlog
+    spdlog::spdlog_header_only
 )

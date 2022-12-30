@@ -16,14 +16,11 @@ file(GLOB_RECURSE SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/game/main/*.cpp 
     ${PROJECT_SOURCE_DIR}/game/main/*.c)
 
-if(UNIX)
-    find_package(SDL2 REQUIRED)
-elseif(WIN32)
-    include(sdl2-config.cmake)
-else()
-    message("unknow platform")
-endif()
 
+find_package(SDL2 CONFIG REQUIRED)
+#include(sdl2-config.cmake)
+
+find_package(glm CONFIG REQUIRED)
 find_package(spdlog REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
@@ -42,9 +39,11 @@ add_executable(${PROJECT_NAME} ${AllFile})
 target_link_libraries(
     ${PROJECT_NAME}
     PRIVATE
+    ${SDL2_LIBRARIES}
     SDL2::SDL2main
     SDL2::SDL2
     tysm-runtime
     spdlog::spdlog
     spdlog::spdlog_header_only
+    glm::glm
 )

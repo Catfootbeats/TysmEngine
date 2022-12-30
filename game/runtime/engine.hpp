@@ -1,5 +1,3 @@
-#pragma once
-#include "SDL.h"
-#include "core/log/log_system.hpp"
+#include "SDL2/SDL.h"
 
 int initWindow();

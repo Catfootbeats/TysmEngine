@@ -1,11 +1,13 @@
 #include "engine.hpp"
-#include <SDL_video.h>
+#include <glm/fwd.hpp>
 
 #include "core/log/log_system.hpp"
+#include "glm/glm.hpp"
 #define WindowWidth 800
 #define WindowHeight 600
 int initWindow()
 {
+    glm::mat4 test;
     if (SDL_Init(SDL_INIT_EVERYTHING)) {
         SDL_Log("sdl init failed!");
         return 1;
@@ -23,6 +25,7 @@ int initWindow()
 
     Tysm::Log::Init();
     Tysm::Log::GetCoreLogger()->info("LogSystem load!");
+    SDL_Log("const char *fmt, ...");
 
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     while (!isQuit) {

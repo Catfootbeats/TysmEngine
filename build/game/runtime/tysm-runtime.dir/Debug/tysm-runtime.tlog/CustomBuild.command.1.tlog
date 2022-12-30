@@ -1,0 +1,10 @@
+^D:\VSCODEPROJECT\SDL\TYSM-GAME\GAME\RUNTIME\CMAKELISTS.TXT
+setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SD:/VSCodeProject/SDL/tysm-game -BD:/VSCodeProject/SDL/tysm-game/build --check-stamp-file D:/VSCodeProject/SDL/tysm-game/build/game/runtime/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

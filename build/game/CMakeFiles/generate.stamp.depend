@@ -1,0 +1,29 @@
+# CMake generation dependency list for this directory.
+D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/CheckIncludeFile.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/CheckLibraryExists.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FeatureSummary.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindPackageMessage.cmake
+D:/Program Files/CMake/share/cmake-3.25/Modules/FindThreads.cmake
+D:/VSCodeProject/SDL/tysm-game/game/CMakeLists.txt
+D:/vcpkg/installed/x64-mingw-static/share/fmt/fmt-config-version.cmake
+D:/vcpkg/installed/x64-mingw-static/share/fmt/fmt-config.cmake
+D:/vcpkg/installed/x64-mingw-static/share/fmt/fmt-targets-debug.cmake
+D:/vcpkg/installed/x64-mingw-static/share/fmt/fmt-targets-release.cmake
+D:/vcpkg/installed/x64-mingw-static/share/fmt/fmt-targets.cmake
+D:/vcpkg/installed/x64-mingw-static/share/glm/glm-config.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2Config.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2ConfigVersion.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2mainTargets-debug.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2mainTargets-release.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2mainTargets.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2staticTargets-debug.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2staticTargets-release.cmake
+D:/vcpkg/installed/x64-mingw-static/share/sdl2/SDL2staticTargets.cmake
+D:/vcpkg/installed/x64-mingw-static/share/spdlog/spdlogConfig.cmake
+D:/vcpkg/installed/x64-mingw-static/share/spdlog/spdlogConfigTargets-debug.cmake
+D:/vcpkg/installed/x64-mingw-static/share/spdlog/spdlogConfigTargets-release.cmake
+D:/vcpkg/installed/x64-mingw-static/share/spdlog/spdlogConfigTargets.cmake
+D:/vcpkg/installed/x64-mingw-static/share/spdlog/spdlogConfigVersion.cmake

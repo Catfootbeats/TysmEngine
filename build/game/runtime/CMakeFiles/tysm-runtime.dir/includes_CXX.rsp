@@ -1,0 +1,1 @@
+-isystem "D:/vcpkg/installed/x64-mingw-static/include" -isystem "D:/vcpkg/installed/x64-mingw-static/include/SDL2"

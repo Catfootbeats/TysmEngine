@@ -24,7 +24,7 @@ else()
     message("unknow platform")
 endif()
 
-find_package(spdlog CONFIG REQUIRED)
+find_package(spdlog REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
 # 对文件下分组

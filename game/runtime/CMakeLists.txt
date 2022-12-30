@@ -14,7 +14,7 @@ else()
 endif()
 
 # Log system third party library
-find_package(spdlog CONFIG REQUIRED)
+find_package(spdlog REQUIRED)
 # include_directories(./../3rdparty/spdlog/include)
 
 add_library(${TARGET_NAME} ${AllFile})

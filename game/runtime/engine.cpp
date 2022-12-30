@@ -12,7 +12,7 @@ int initWindow()
     }
 
     SDL_Window *window = SDL_CreateWindow(
-        "hello sdl2", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+        "Tysm Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         WindowWidth, WindowHeight, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
 

@@ -13,7 +13,7 @@ void Log::Init()
     mCoreLogger = spdlog::stdout_color_mt("TYSM");
     mCoreLogger->set_level(spdlog::level::trace);
 
-    mClientLogger = spdlog::stdout_color_mt("APP");
+    mClientLogger = spdlog::stdout_color_mt("GAME");
     mClientLogger->set_level(spdlog::level::trace);
 }
 }  // namespace Tysm

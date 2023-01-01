@@ -1,3 +1,9 @@
 #include "SDL2/SDL.h"
 
-int initWindow();
+namespace Tysm {
+class Engine {
+public:
+    bool TYInitEngine();
+    
+    };
+}

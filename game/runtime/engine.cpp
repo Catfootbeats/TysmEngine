@@ -5,7 +5,7 @@
 #include "glm/glm.hpp"
 #define WindowWidth 800
 #define WindowHeight 600
-int initWindow()
+int init()
 {
     glm::mat4 test;
     if (SDL_Init(SDL_INIT_EVERYTHING)) {

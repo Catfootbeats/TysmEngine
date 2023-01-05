@@ -56,8 +56,3 @@ int init()
     SDL_Quit();
     return 0;
 }
-
-bool Tysm::Engine::TyInitEngine()
-{
-    
-}

@@ -205,14 +205,6 @@ game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj: \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_locale.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
- D:/vcpkg/installed/x64-mingw-static/include/glm/fwd.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/qualifier.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/setup.hpp \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
- D:/mingw-w64/posix/x86_64-w64-mingw32/include/assert.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstddef \
- D:/vcpkg/installed/x64-mingw-static/include/glm/simd/platform.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
  D:\VSCodeProject\SDL\tysm-game\game\runtime\core/log/log_system.hpp \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/spdlog.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/common.h \
@@ -234,6 +226,7 @@ game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj: \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/nested_exception.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/chrono \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ratio \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ctime \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/time.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/_timeval.h \
@@ -319,6 +312,7 @@ game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj: \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/fmt/fmt.h \
  D:/vcpkg/installed/x64-mingw-static/include/fmt/core.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstddef \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iterator \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
@@ -356,139 +350,8 @@ game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj: \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/backtracer.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/log_msg_buffer.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/circular_q.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/assert.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/version.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/synchronous_factory.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
- D:/vcpkg/installed/x64-mingw-static/include/glm/glm.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/_fixes.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/setup.hpp \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/climits \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cfloat \
- D:/vcpkg/installed/x64-mingw-static/include/glm/vec2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_bool2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec2.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/compute_vector_relational.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_bool2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_float2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_float2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_double2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_double2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_int2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_int2_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/scalar_int_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/setup.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_uint2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_uint2_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/scalar_uint_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/vec3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_bool3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec3.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_bool3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_float3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_float3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_double3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_double3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_int3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_int3_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_uint3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_uint3_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/vec4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_bool4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec4.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_bool4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_float4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_float4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_double4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_double4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_int4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_int4_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_uint4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/vector_uint4_sized.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat2x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double2x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat2x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat2x2.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/matrix.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat2x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double2x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat2x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat2x3.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double2x3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float2x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float2x3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat2x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double2x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat2x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat2x4.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double2x4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float2x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float2x4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat3x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double3x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat3x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat3x2.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double3x2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float3x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float3x2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat3x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double3x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat3x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat3x3.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double3x3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float3x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float3x3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat3x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double3x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat3x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat3x4.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double3x4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float3x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float3x4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat4x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double4x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat4x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat4x2.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double4x2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float4x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float4x2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat4x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double4x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat4x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat4x3.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double4x3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float4x3.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float4x3_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/mat4x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double4x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat4x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_mat4x4.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double4x4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float4x4.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float4x4_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_matrix.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/geometric.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_geometric.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/exponential.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec1.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_vec1.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_exponential.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/vector_relational.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_vector_relational.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/_vectorize.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/common.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_common.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/compute_common.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_double2x2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float2x2.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/ext/matrix_float2x2_precision.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/trigonometric.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_trigonometric.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/packing.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_packing.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_half.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/type_half.inl \
- D:/vcpkg/installed/x64-mingw-static/include/glm/integer.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/glm/detail/func_integer.inl
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream

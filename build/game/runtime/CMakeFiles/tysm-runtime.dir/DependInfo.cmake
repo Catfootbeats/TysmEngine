@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/VSCodeProject/SDL/tysm-game/game/runtime/core/log/log_system.cpp" "game/runtime/CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj" "gcc" "game/runtime/CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj.d"
   "D:/VSCodeProject/SDL/tysm-game/game/runtime/engine.cpp" "game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj" "gcc" "game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj.d"
+  "D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/window_system.cpp" "game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj" "gcc" "game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj.d"
   )
 
 # Targets to which this target links.

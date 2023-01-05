@@ -4,6 +4,6 @@
 
 int main(int args, char *argv[])
 {
-    initWindow();
+    init();
     return 0;
 }

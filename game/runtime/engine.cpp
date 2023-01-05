@@ -1,13 +1,9 @@
 #include "engine.hpp"
-#include <glm/fwd.hpp>
 
-#include "core/log/log_system.hpp"
-#include "glm/glm.hpp"
 #define WindowWidth 800
 #define WindowHeight 600
 int init()
 {
-    glm::mat4 test;
     if (SDL_Init(SDL_INIT_EVERYTHING)) {
         SDL_Log("sdl init failed!");
         return 1;
@@ -59,4 +55,9 @@ int init()
 
     SDL_Quit();
     return 0;
+}
+
+bool Tysm::Engine::TyInitEngine()
+{
+    
 }

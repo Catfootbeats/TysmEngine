@@ -205,14 +205,17 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_locale.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iosfwd \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stringfwd.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/memoryfwd.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwchar \
+ D:/VSCodeProject/SDL/tysm-game/game/runtime/core/log/log_system.hpp \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/spdlog.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/common.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/tweakme.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/null_mutex.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/atomic \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_base.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_lockfree_defines.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/initializer_list \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/exception \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception_ptr.h \
@@ -221,14 +224,31 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hash_bytes.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/new \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/nested_exception.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/char_traits.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/chrono \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ratio \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/localefwd.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/clocale \
- D:/mingw-w64/posix/x86_64-w64-mingw32/include/locale.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cctype \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ios_base.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ctime \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/time.h \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/_timeval.h \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/sys/timeb.h \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/pthread_time.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/parse_numbers.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/memory \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/allocator.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/new_allocator.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/memoryfwd.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_construct.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/alloc_traits.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iosfwd \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stringfwd.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwchar \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/atomicity.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -236,25 +256,28 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/errno.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/signal.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/pthread_signal.h \
- D:/mingw-w64/posix/x86_64-w64-mingw32/include/sys/timeb.h \
- D:/mingw-w64/posix/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/pthread_compat.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/pthread_unistd.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/allocator.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/new_allocator.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ostream_insert.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cxxabi_forced.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/concurrence.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_function.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward/binders.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uses_allocator.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unique_ptr.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tuple \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/array \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdexcept \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/char_traits.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/localefwd.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/clocale \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/locale.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cctype \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ostream_insert.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cxxabi_forced.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/range_access.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/initializer_list \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/alloc_traits.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string_view \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/string_view.tcc \
@@ -262,10 +285,43 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdio \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cerrno \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/invoke.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_base.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/allocated_ptr.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/refwrap.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_atomic.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward/auto_ptr.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/functional \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_function.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/unordered_map \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable_policy.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/node_handle.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/optional \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/vector \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/fmt/fmt.h \
+ D:/vcpkg/installed/x64-mingw-static/include/fmt/core.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstddef \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iterator \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ios_base.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.tcc \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/system_error \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdexcept \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/streambuf \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/streambuf.tcc \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_ios.h \
@@ -279,4 +335,23 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_ios.tcc \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ostream.tcc \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stream_iterator.h \
+ D:/vcpkg/installed/x64-mingw-static/include/fmt/format.h \
+ D:/vcpkg/installed/x64-mingw-static/include/fmt/core.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/registry.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/periodic_worker.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/condition_variable \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_mutex.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mutex \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/thread \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/logger.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/log_msg.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/backtracer.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/log_msg_buffer.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/circular_q.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
+ D:/mingw-w64/posix/x86_64-w64-mingw32/include/assert.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/version.h \
+ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/synchronous_factory.h \
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream

@@ -177,6 +177,30 @@ engine.cpp.s:
 	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.s
 .PHONY : engine.cpp.s
 
+function/render/window_system.obj: function/render/window_system.cpp.obj
+.PHONY : function/render/window_system.obj
+
+# target to build an object file
+function/render/window_system.cpp.obj:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj
+.PHONY : function/render/window_system.cpp.obj
+
+function/render/window_system.i: function/render/window_system.cpp.i
+.PHONY : function/render/window_system.i
+
+# target to preprocess a source file
+function/render/window_system.cpp.i:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.i
+.PHONY : function/render/window_system.cpp.i
+
+function/render/window_system.s: function/render/window_system.cpp.s
+.PHONY : function/render/window_system.s
+
+# target to generate assembly for a file
+function/render/window_system.cpp.s:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.s
+.PHONY : function/render/window_system.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -192,6 +216,9 @@ help:
 	@echo ... engine.obj
 	@echo ... engine.i
 	@echo ... engine.s
+	@echo ... function/render/window_system.obj
+	@echo ... function/render/window_system.i
+	@echo ... function/render/window_system.s
 .PHONY : help
 
 

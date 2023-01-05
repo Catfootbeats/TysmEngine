@@ -98,19 +98,36 @@ game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tysm-runtime.dir/engine.cpp.s"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game\runtime && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\VSCodeProject\SDL\tysm-game\game\runtime\engine.cpp -o CMakeFiles\tysm-runtime.dir\engine.cpp.s
 
+game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj: game/runtime/CMakeFiles/tysm-runtime.dir/flags.make
+game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj: game/runtime/CMakeFiles/tysm-runtime.dir/includes_CXX.rsp
+game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj: D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/window_system.cpp
+game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj: game/runtime/CMakeFiles/tysm-runtime.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game\runtime && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj -MF CMakeFiles\tysm-runtime.dir\function\render\window_system.cpp.obj.d -o CMakeFiles\tysm-runtime.dir\function\render\window_system.cpp.obj -c D:\VSCodeProject\SDL\tysm-game\game\runtime\function\render\window_system.cpp
+
+game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.i"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game\runtime && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\VSCodeProject\SDL\tysm-game\game\runtime\function\render\window_system.cpp > CMakeFiles\tysm-runtime.dir\function\render\window_system.cpp.i
+
+game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.s"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game\runtime && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\VSCodeProject\SDL\tysm-game\game\runtime\function\render\window_system.cpp -o CMakeFiles\tysm-runtime.dir\function\render\window_system.cpp.s
+
 # Object files for target tysm-runtime
 tysm__runtime_OBJECTS = \
 "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj" \
-"CMakeFiles/tysm-runtime.dir/engine.cpp.obj"
+"CMakeFiles/tysm-runtime.dir/engine.cpp.obj" \
+"CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj"
 
 # External object files for target tysm-runtime
 tysm__runtime_EXTERNAL_OBJECTS =
 
 game/runtime/libtysm-runtime.a: game/runtime/CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj
 game/runtime/libtysm-runtime.a: game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj
+game/runtime/libtysm-runtime.a: game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj
 game/runtime/libtysm-runtime.a: game/runtime/CMakeFiles/tysm-runtime.dir/build.make
 game/runtime/libtysm-runtime.a: game/runtime/CMakeFiles/tysm-runtime.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libtysm-runtime.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libtysm-runtime.a"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game\runtime && $(CMAKE_COMMAND) -P CMakeFiles\tysm-runtime.dir\cmake_clean_target.cmake
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game\runtime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tysm-runtime.dir\link.txt --verbose=$(VERBOSE)
 

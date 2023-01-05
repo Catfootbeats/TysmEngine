@@ -3,7 +3,7 @@
 namespace Tysm {
 class Engine {
 public:
-    bool TYInitEngine();
-    
+    bool TyInitEngine();
+private:
     };
 }

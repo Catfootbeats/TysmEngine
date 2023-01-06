@@ -17,7 +17,7 @@ class WindowSystem {
 public:
     WindowSystem() = default;
     ~WindowSystem();
-    void init();
+    void init(TyWindowCreateInfo createInfo);
     void pollEvents() const;
     bool shouldClose() const;
     void setTitle(const char* title);
@@ -29,6 +29,7 @@ private:
     int m_width;
     int m_height;
 
+    int flags;
     bool m_is_focus_mode;
     };
 }

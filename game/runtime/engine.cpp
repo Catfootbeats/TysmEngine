@@ -1,7 +1,5 @@
 #include "engine.hpp"
 
-#define WindowWidth 800
-#define WindowHeight 600
 int init()
 {
     if (SDL_Init(SDL_INIT_EVERYTHING)) {

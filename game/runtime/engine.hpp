@@ -5,7 +5,10 @@ int init();
 namespace Tysm {
 class Engine {
 public:
+    Engine();
+    ~Engine();
     bool TyInitEngine();
+
 private:
-    };
-}
+};
+}  // namespace Tysm

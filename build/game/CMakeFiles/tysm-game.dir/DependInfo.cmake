@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/VSCodeProject/SDL/tysm-game/game/main/main.cpp" "game/CMakeFiles/tysm-game.dir/main/main.cpp.obj" "gcc" "game/CMakeFiles/tysm-game.dir/main/main.cpp.obj.d"
+  "/home/catfootbeats/文档/project/tysm-game/game/main/main.cpp" "game/CMakeFiles/tysm-game.dir/main/main.cpp.o" "gcc" "game/CMakeFiles/tysm-game.dir/main/main.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "D:/VSCodeProject/SDL/tysm-game/build/game/runtime/CMakeFiles/tysm-runtime.dir/DependInfo.cmake"
+  "/home/catfootbeats/文档/project/tysm-game/build/game/runtime/CMakeFiles/tysm-runtime.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

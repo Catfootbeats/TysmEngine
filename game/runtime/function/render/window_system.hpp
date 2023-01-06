@@ -1,6 +1,8 @@
 #pragma once
-#include "SDL2/SDL.h"
+#include <SDL_events.h>
+
 #include "./../../core/log/log_system.hpp"
+#include "SDL2/SDL.h"
 
 //std
 #include <array>
@@ -19,17 +21,19 @@ public:
     ~WindowSystem();
     void init(TyWindowCreateInfo createInfo);
     void pollEvents() const;
-    bool shouldClose() const;
+    // bool shouldClose() const;
     void setTitle(const char* title);
     SDL_Window* getWindow() const;
+    SDL_Event* getEvent();
     std::array<int, 2> getWindowSize() const;
 
 private:
     SDL_Window* m_window;
+    SDL_Event* event;
     int m_width;
     int m_height;
 
     int flags;
     bool m_is_focus_mode;
-    };
-}
+};
+}  // namespace Tysm

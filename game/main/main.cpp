@@ -1,9 +1,10 @@
-#include "engine.hpp"
-
 #include <iostream>
+
+#include "engine.hpp"
 
 int main(int args, char *argv[])
 {
-    init();
+    Tysm::Engine engine;
+    engine.TyInitEngine();
     return 0;
 }

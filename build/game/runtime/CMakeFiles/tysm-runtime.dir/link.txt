@@ -1,2 +1,2 @@
-D:\mingw-w64\posix\bin\ar.exe qc libtysm-runtime.a "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj" "CMakeFiles/tysm-runtime.dir/engine.cpp.obj" "CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj"
-D:\mingw-w64\posix\bin\ranlib.exe libtysm-runtime.a
+/usr/bin/ar qc libtysm-runtime.a "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.o" "CMakeFiles/tysm-runtime.dir/engine.cpp.o" "CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.o"
+/usr/bin/ranlib libtysm-runtime.a

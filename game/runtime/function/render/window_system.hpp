@@ -19,16 +19,16 @@ public:
     WindowSystem() = default;
     ~WindowSystem();
     void init(TyWindowCreateInfo createInfo);
-    void pollEvents() const;
+    int pollEvents();
     // bool shouldClose() const;
     void setTitle(const char* title);
     SDL_Window* getWindow() const;
-    SDL_Event* getEvent();
+    SDL_Event getEvent();
     std::array<int, 2> getWindowSize() const;
 
 private:
     SDL_Window* m_window{nullptr};
-    SDL_Event* event{nullptr};
+    SDL_Event m_event;
     int m_width{0};
     int m_height{0};
 

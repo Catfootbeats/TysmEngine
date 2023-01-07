@@ -13,6 +13,6 @@ public:
     void run();
 
 private:
-    WindowSystem* window_system = new WindowSystem;
+   // WindowSystem* window_system = new WindowSystem;
 };
 }  // namespace Tysm

@@ -14,6 +14,8 @@ namespace Tysm
 
     private:
         Tysm::Engine* engine;
+        Tysm::WindowSystem* windowSystem;
+        bool isQuit{false};
     };
     
 } // namespace Tysm

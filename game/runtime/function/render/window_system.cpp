@@ -40,9 +40,14 @@ SDL_Window* WindowSystem::getWindow() const
     return m_window;
 }
 
-void WindowSystem::pollEvents() const
+SDL_Event WindowSystem::getEvent()
 {
-    SDL_PollEvent(event);
+    return m_event;
+}
+
+int WindowSystem::pollEvents()
+{
+    return SDL_PollEvent(&m_event);
 }
 
 std::array<int, 2> WindowSystem::getWindowSize() const

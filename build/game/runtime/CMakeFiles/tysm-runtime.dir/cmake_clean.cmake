@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.o"
-  "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.o.d"
-  "CMakeFiles/tysm-runtime.dir/engine.cpp.o"
-  "CMakeFiles/tysm-runtime.dir/engine.cpp.o.d"
-  "CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.o"
-  "CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.o.d"
+  "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj"
+  "CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj.d"
+  "CMakeFiles/tysm-runtime.dir/engine.cpp.obj"
+  "CMakeFiles/tysm-runtime.dir/engine.cpp.obj.d"
+  "CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj"
+  "CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj.d"
   "libtysm-runtime.a"
   "libtysm-runtime.pdb"
 )

@@ -3,6 +3,11 @@ option(GROUP_BY_EXPLORER ON)            # 按资源管理器目录结构分组
 
 list(APPEND SubDir "runtime")
 
+if(WIN32)
+    add_compile_options(/W4)
+    add_compile_options(/wd4819)
+endif()
+
 # 遍历生成
 foreach(dirname ${SubDir})
     add_subdirectory(${dirname})

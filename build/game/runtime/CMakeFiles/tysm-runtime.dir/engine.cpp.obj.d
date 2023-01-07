@@ -354,4 +354,5 @@ game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj: \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/assert.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/version.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/synchronous_factory.h \
- D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream
+ D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
+ D:\VSCodeProject\SDL\tysm-game\game\runtime\function/render/window_system.hpp

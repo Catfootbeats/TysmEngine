@@ -1,8 +1,5 @@
 #include "window_system.hpp"
 
-#include <SDL_events.h>
-#include <SDL_video.h>
-
 #include <array>
 
 namespace Tysm {
@@ -30,6 +27,7 @@ void WindowSystem::init(TyWindowCreateInfo createInfo)
         SDL_Quit();
         return;
     }
+    TY_CORE_INFO("Create Window Succeed!");
 }
 
 void WindowSystem::setTitle(const char* title)

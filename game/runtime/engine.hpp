@@ -10,7 +10,9 @@ public:
     ~Engine();
     void TyInitEngine();
 
+    void run();
+
 private:
-    WindowSystem* window_system;
+    WindowSystem* window_system = new WindowSystem;
 };
 }  // namespace Tysm

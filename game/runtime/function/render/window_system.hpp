@@ -1,5 +1,4 @@
 #pragma once
-#include <SDL_events.h>
 
 #include "./../../core/log/log_system.hpp"
 #include "SDL2/SDL.h"
@@ -28,12 +27,11 @@ public:
     std::array<int, 2> getWindowSize() const;
 
 private:
-    SDL_Window* m_window;
-    SDL_Event* event;
-    int m_width;
-    int m_height;
+    SDL_Window* m_window{nullptr};
+    SDL_Event* event{nullptr};
+    int m_width{0};
+    int m_height{0};
 
-    int flags;
-    bool m_is_focus_mode;
+    int flags{0};
 };
 }  // namespace Tysm

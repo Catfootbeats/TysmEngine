@@ -16,4 +16,8 @@ void Engine::TyInitEngine()
     createInfo.is_fullscreen = false;
     window_system->init(createInfo);
 }
+
+void Engine::run(){
+    
+}
 }  // namespace Tysm

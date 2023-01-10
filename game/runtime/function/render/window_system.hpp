@@ -28,7 +28,7 @@ public:
 
 private:
     SDL_Window* m_window{nullptr};
-    SDL_Event m_event;
+    SDL_Event m_event{0};
     int m_width{0};
     int m_height{0};
 

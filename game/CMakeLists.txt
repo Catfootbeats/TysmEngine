@@ -23,9 +23,8 @@ file(GLOB_RECURSE SOURCE_FILES
 
 
 find_package(SDL2 CONFIG REQUIRED)
-#include(sdl2-config.cmake)
+find_package(SDL2_image CONFIG REQUIRED)
 
-find_package(glm CONFIG REQUIRED)
 find_package(spdlog REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
@@ -47,8 +46,8 @@ target_link_libraries(
     ${SDL2_LIBRARIES}
     SDL2::SDL2main
     SDL2::SDL2
-    tysm-runtime
+    SDL2_image::SDL2_image
+    tysm_runtime
     spdlog::spdlog
     spdlog::spdlog_header_only
-    glm::glm
 )

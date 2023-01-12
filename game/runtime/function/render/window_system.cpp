@@ -1,5 +1,8 @@
 #include "window_system.hpp"
 
+#include <SDL_surface.h>
+#include <SDL_video.h>
+
 #include <array>
 
 namespace Tysm {
@@ -54,4 +57,14 @@ std::array<int, 2> WindowSystem::getWindowSize() const
 {
     return std::array<int, 2>({m_width, m_height});
 }
+
+void WindowSystem::setIcon(const char* path)
+{
+    SDL_Surface* surface = SDL_LoadBMP(path);
+    if (!surface)
+        TY_CORE_FATAL("fatal to set window icon!");
+    SDL_SetWindowIcon(m_window, surface);
+    SDL_FreeSurface(surface);
+}
+
 }  //namespace Tysm

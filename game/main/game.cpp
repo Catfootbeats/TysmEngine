@@ -22,6 +22,7 @@ void Game::start()
     createInfo.title = "hello tysm game";
     createInfo.is_fullscreen = false;
     windowSystem->init(createInfo);
+    windowSystem->setIcon("resource/tysm_icon.bmp");
 }
 
 void Game::run()
@@ -30,11 +31,10 @@ void Game::run()
     //main game while
     while (!isQuit) {
         while (windowSystem->pollEvents()) {
-            if (windowSystem->getEvent().type == SDL_QUIT) {
+            if (windowSystem->getEvent().type == SDL_QUIT)
                 isQuit = true;
-            }
         }
-        TY_INFO("Game is running!");
+        //TY_INFO("Game is running!");
     }
 }
 }  // namespace Tysm

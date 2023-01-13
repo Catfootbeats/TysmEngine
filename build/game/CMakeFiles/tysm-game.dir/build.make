@@ -68,11 +68,26 @@ include game/CMakeFiles/tysm-game.dir/progress.make
 # Include the compile flags for this target's objects.
 include game/CMakeFiles/tysm-game.dir/flags.make
 
+game/CMakeFiles/tysm-game.dir/main/game.cpp.obj: game/CMakeFiles/tysm-game.dir/flags.make
+game/CMakeFiles/tysm-game.dir/main/game.cpp.obj: game/CMakeFiles/tysm-game.dir/includes_CXX.rsp
+game/CMakeFiles/tysm-game.dir/main/game.cpp.obj: D:/VSCodeProject/SDL/tysm-game/game/main/game.cpp
+game/CMakeFiles/tysm-game.dir/main/game.cpp.obj: game/CMakeFiles/tysm-game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object game/CMakeFiles/tysm-game.dir/main/game.cpp.obj"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT game/CMakeFiles/tysm-game.dir/main/game.cpp.obj -MF CMakeFiles\tysm-game.dir\main\game.cpp.obj.d -o CMakeFiles\tysm-game.dir\main\game.cpp.obj -c D:\VSCodeProject\SDL\tysm-game\game\main\game.cpp
+
+game/CMakeFiles/tysm-game.dir/main/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tysm-game.dir/main/game.cpp.i"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\VSCodeProject\SDL\tysm-game\game\main\game.cpp > CMakeFiles\tysm-game.dir\main\game.cpp.i
+
+game/CMakeFiles/tysm-game.dir/main/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tysm-game.dir/main/game.cpp.s"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\VSCodeProject\SDL\tysm-game\game\main\game.cpp -o CMakeFiles\tysm-game.dir\main\game.cpp.s
+
 game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: game/CMakeFiles/tysm-game.dir/flags.make
 game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: game/CMakeFiles/tysm-game.dir/includes_CXX.rsp
 game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: D:/VSCodeProject/SDL/tysm-game/game/main/main.cpp
 game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: game/CMakeFiles/tysm-game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object game/CMakeFiles/tysm-game.dir/main/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object game/CMakeFiles/tysm-game.dir/main/main.cpp.obj"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT game/CMakeFiles/tysm-game.dir/main/main.cpp.obj -MF CMakeFiles\tysm-game.dir\main\main.cpp.obj.d -o CMakeFiles\tysm-game.dir\main\main.cpp.obj -c D:\VSCodeProject\SDL\tysm-game\game\main\main.cpp
 
 game/CMakeFiles/tysm-game.dir/main/main.cpp.i: cmake_force
@@ -85,30 +100,33 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.s: cmake_force
 
 # Object files for target tysm-game
 tysm__game_OBJECTS = \
+"CMakeFiles/tysm-game.dir/main/game.cpp.obj" \
 "CMakeFiles/tysm-game.dir/main/main.cpp.obj"
 
 # External object files for target tysm-game
 tysm__game_EXTERNAL_OBJECTS =
 
+game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/game.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/main.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/build.make
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: game/runtime/libtysm-runtime.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libspdlogd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libspdlogd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfmtd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfmtd.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/manual-link/SDL2maind.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/manual-link/SDL2maind.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/SDL2_imaged.lib
+game/tysm-game.exe: game/runtime/libtysm_runtime.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/spdlogd.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/SDL2d.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/manual-link/SDL2maind.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/SDL2_imaged.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/SDL2d.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/spdlogd.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/fmtd.lib
+game/tysm-game.exe: D:/vcpkg/installed/x64-windows/debug/lib/fmtd.lib
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/linkLibs.rsp
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/objects1
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tysm-game.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tysm-game.exe"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tysm-game.dir\link.txt --verbose=$(VERBOSE)
-	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/VSCodeProject/SDL/tysm-game/build/game/tysm-game.exe -installedDir D:/vcpkg/installed/x64-mingw-static/debug/bin -OutVariable out
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/VSCodeProject/SDL/tysm-game/build/game/tysm-game.exe -installedDir D:/vcpkg/installed/x64-windows/debug/bin -OutVariable out
 
 # Rule to build all files generated by this target.
 game/CMakeFiles/tysm-game.dir/build: game/tysm-game.exe

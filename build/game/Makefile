@@ -129,6 +129,30 @@ tysm-game/fast:
 	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/build
 .PHONY : tysm-game/fast
 
+main/game.obj: main/game.cpp.obj
+.PHONY : main/game.obj
+
+# target to build an object file
+main/game.cpp.obj:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/game.cpp.obj
+.PHONY : main/game.cpp.obj
+
+main/game.i: main/game.cpp.i
+.PHONY : main/game.i
+
+# target to preprocess a source file
+main/game.cpp.i:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/game.cpp.i
+.PHONY : main/game.cpp.i
+
+main/game.s: main/game.cpp.s
+.PHONY : main/game.s
+
+# target to generate assembly for a file
+main/game.cpp.s:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/game.cpp.s
+.PHONY : main/game.cpp.s
+
 main/main.obj: main/main.cpp.obj
 .PHONY : main/main.obj
 
@@ -162,6 +186,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... tysm-game
+	@echo ... main/game.obj
+	@echo ... main/game.i
+	@echo ... main/game.s
 	@echo ... main/main.obj
 	@echo ... main/main.i
 	@echo ... main/main.s

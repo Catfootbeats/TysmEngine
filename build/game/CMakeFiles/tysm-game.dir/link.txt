@@ -1,3 +1,3 @@
 "D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\tysm-game.dir/objects.a
 D:\mingw-w64\posix\bin\ar.exe qc CMakeFiles\tysm-game.dir/objects.a @CMakeFiles\tysm-game.dir\objects1
-D:\mingw-w64\posix\bin\g++.exe -g -Wl,--undefined=WinMain -Wl,--whole-archive CMakeFiles\tysm-game.dir/objects.a -Wl,--no-whole-archive -o tysm-game.exe -Wl,--out-implib,libtysm-game.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\tysm-game.dir\linkLibs.rsp
+D:\mingw-w64\posix\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\tysm-game.dir/objects.a -Wl,--no-whole-archive -o tysm-game.exe -Wl,--out-implib,libtysm-game.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\tysm-game.dir\linkLibs.rsp

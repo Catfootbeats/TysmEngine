@@ -116,25 +116,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-game/runtime/CMakeFiles/tysm-runtime.dir/rule:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game/runtime/CMakeFiles/tysm-runtime.dir/rule
-.PHONY : game/runtime/CMakeFiles/tysm-runtime.dir/rule
+game/runtime/CMakeFiles/tysm_runtime.dir/rule:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game/runtime/CMakeFiles/tysm_runtime.dir/rule
+.PHONY : game/runtime/CMakeFiles/tysm_runtime.dir/rule
 
 # Convenience name for target.
-tysm-runtime: game/runtime/CMakeFiles/tysm-runtime.dir/rule
-.PHONY : tysm-runtime
+tysm_runtime: game/runtime/CMakeFiles/tysm_runtime.dir/rule
+.PHONY : tysm_runtime
 
 # fast build rule for target.
-tysm-runtime/fast:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/build
-.PHONY : tysm-runtime/fast
+tysm_runtime/fast:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/build
+.PHONY : tysm_runtime/fast
 
 core/log/log_system.obj: core/log/log_system.cpp.obj
 .PHONY : core/log/log_system.obj
 
 # target to build an object file
 core/log/log_system.cpp.obj:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.obj
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/core/log/log_system.cpp.obj
 .PHONY : core/log/log_system.cpp.obj
 
 core/log/log_system.i: core/log/log_system.cpp.i
@@ -142,7 +142,7 @@ core/log/log_system.i: core/log/log_system.cpp.i
 
 # target to preprocess a source file
 core/log/log_system.cpp.i:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.i
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/core/log/log_system.cpp.i
 .PHONY : core/log/log_system.cpp.i
 
 core/log/log_system.s: core/log/log_system.cpp.s
@@ -150,7 +150,7 @@ core/log/log_system.s: core/log/log_system.cpp.s
 
 # target to generate assembly for a file
 core/log/log_system.cpp.s:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/core/log/log_system.cpp.s
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/core/log/log_system.cpp.s
 .PHONY : core/log/log_system.cpp.s
 
 engine.obj: engine.cpp.obj
@@ -158,7 +158,7 @@ engine.obj: engine.cpp.obj
 
 # target to build an object file
 engine.cpp.obj:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.obj
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/engine.cpp.obj
 .PHONY : engine.cpp.obj
 
 engine.i: engine.cpp.i
@@ -166,7 +166,7 @@ engine.i: engine.cpp.i
 
 # target to preprocess a source file
 engine.cpp.i:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.i
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/engine.cpp.i
 .PHONY : engine.cpp.i
 
 engine.s: engine.cpp.s
@@ -174,15 +174,63 @@ engine.s: engine.cpp.s
 
 # target to generate assembly for a file
 engine.cpp.s:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/engine.cpp.s
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/engine.cpp.s
 .PHONY : engine.cpp.s
+
+function/framework/object.obj: function/framework/object.cpp.obj
+.PHONY : function/framework/object.obj
+
+# target to build an object file
+function/framework/object.cpp.obj:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/framework/object.cpp.obj
+.PHONY : function/framework/object.cpp.obj
+
+function/framework/object.i: function/framework/object.cpp.i
+.PHONY : function/framework/object.i
+
+# target to preprocess a source file
+function/framework/object.cpp.i:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/framework/object.cpp.i
+.PHONY : function/framework/object.cpp.i
+
+function/framework/object.s: function/framework/object.cpp.s
+.PHONY : function/framework/object.s
+
+# target to generate assembly for a file
+function/framework/object.cpp.s:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/framework/object.cpp.s
+.PHONY : function/framework/object.cpp.s
+
+function/render/render_system.obj: function/render/render_system.cpp.obj
+.PHONY : function/render/render_system.obj
+
+# target to build an object file
+function/render/render_system.cpp.obj:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/render/render_system.cpp.obj
+.PHONY : function/render/render_system.cpp.obj
+
+function/render/render_system.i: function/render/render_system.cpp.i
+.PHONY : function/render/render_system.i
+
+# target to preprocess a source file
+function/render/render_system.cpp.i:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/render/render_system.cpp.i
+.PHONY : function/render/render_system.cpp.i
+
+function/render/render_system.s: function/render/render_system.cpp.s
+.PHONY : function/render/render_system.s
+
+# target to generate assembly for a file
+function/render/render_system.cpp.s:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/render/render_system.cpp.s
+.PHONY : function/render/render_system.cpp.s
 
 function/render/window_system.obj: function/render/window_system.cpp.obj
 .PHONY : function/render/window_system.obj
 
 # target to build an object file
 function/render/window_system.cpp.obj:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.obj
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/render/window_system.cpp.obj
 .PHONY : function/render/window_system.cpp.obj
 
 function/render/window_system.i: function/render/window_system.cpp.i
@@ -190,7 +238,7 @@ function/render/window_system.i: function/render/window_system.cpp.i
 
 # target to preprocess a source file
 function/render/window_system.cpp.i:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.i
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/render/window_system.cpp.i
 .PHONY : function/render/window_system.cpp.i
 
 function/render/window_system.s: function/render/window_system.cpp.s
@@ -198,7 +246,7 @@ function/render/window_system.s: function/render/window_system.cpp.s
 
 # target to generate assembly for a file
 function/render/window_system.cpp.s:
-	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm-runtime.dir\build.make game/runtime/CMakeFiles/tysm-runtime.dir/function/render/window_system.cpp.s
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\runtime\CMakeFiles\tysm_runtime.dir\build.make game/runtime/CMakeFiles/tysm_runtime.dir/function/render/window_system.cpp.s
 .PHONY : function/render/window_system.cpp.s
 
 # Help Target
@@ -209,13 +257,19 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... tysm-runtime
+	@echo ... tysm_runtime
 	@echo ... core/log/log_system.obj
 	@echo ... core/log/log_system.i
 	@echo ... core/log/log_system.s
 	@echo ... engine.obj
 	@echo ... engine.i
 	@echo ... engine.s
+	@echo ... function/framework/object.obj
+	@echo ... function/framework/object.i
+	@echo ... function/framework/object.s
+	@echo ... function/render/render_system.obj
+	@echo ... function/render/render_system.i
+	@echo ... function/render/render_system.s
 	@echo ... function/render/window_system.obj
 	@echo ... function/render/window_system.i
 	@echo ... function/render/window_system.s

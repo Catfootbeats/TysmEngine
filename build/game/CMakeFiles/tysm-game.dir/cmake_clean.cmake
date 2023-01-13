@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tysm-game.dir/main/game.cpp.obj"
+  "CMakeFiles/tysm-game.dir/main/game.cpp.obj.d"
   "CMakeFiles/tysm-game.dir/main/main.cpp.obj"
   "CMakeFiles/tysm-game.dir/main/main.cpp.obj.d"
   "libtysm-game.dll.a"

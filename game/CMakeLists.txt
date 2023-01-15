@@ -40,10 +40,28 @@ endforeach()
 
 add_executable(${PROJECT_NAME} ${AllFile})
 
+if(MSVC)
+if(CMAKE_BUILD_TYPE STREQUAL Debug)
+    execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Debug/resources"
+) 
+
+else()
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Release/resources")
+endif(CMAKE_BUILD_TYPE STREQUAL Debug)
+
+# TODO gcc编译器资源文件复制
+# else(execute_process(COMMAND ${CMAKE_COMMAND} -E
+# copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build"
+# ) )
+endif(MSVC)
+
 target_link_libraries(
     ${PROJECT_NAME}
     PRIVATE
     ${SDL2_LIBRARIES}
+    ${SDL2_image_LIBRARIES}
     SDL2::SDL2main
     SDL2::SDL2
     SDL2_image::SDL2_image

@@ -22,7 +22,7 @@ void Game::start()
     createInfo.title = "hello tysm game";
     createInfo.is_fullscreen = false;
     windowSystem->init(createInfo);
-    windowSystem->setIcon("resource/tysm_icon.bmp");
+    windowSystem->setIcon("resources/tysm_icon.bmp");
 }
 
 void Game::run()

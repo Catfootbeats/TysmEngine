@@ -17,6 +17,7 @@ target_link_libraries(
     ${TARGET_NAME}
     PRIVATE
     ${SDL2_LIBRARIES}
+    ${SDL2_image_LIBRARIES}
     SDL2::SDL2main
     SDL2::SDL2
     SDL2_image::SDL2_image

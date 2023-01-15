@@ -21,7 +21,7 @@ public:
     ~WindowSystem();
     void init(TyWindowCreateInfo createInfo);
     int pollEvents();
-    // bool shouldClose() const;
+    // TODO bool shouldClose() const;
     void setTitle(const char* title);
     SDL_Window* getWindow() const;
     SDL_Event getEvent();

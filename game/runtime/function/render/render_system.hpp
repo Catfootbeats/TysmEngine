@@ -1,5 +1,7 @@
 #pragma once
 
+#include "./../runtime/function/framework/object.hpp"
+
 #include "SDL2/SDL.h"
 
 //std
@@ -15,7 +17,7 @@ public:
     void init();
     SDL_Renderer* getRenderer();
     //traversal all Ty_Object and show on the screen
-    void present();
+    void present(std::vector<Ty_Object*>);
 
 private:
     SDL_Renderer* m_render;

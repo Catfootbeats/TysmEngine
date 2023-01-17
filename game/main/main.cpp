@@ -2,11 +2,11 @@
 
 #include "game.hpp"
 
-int main(int args, char *argv[])
+int main(int args, char* argv[])
 {
     Tysm::Game* game = new Tysm::Game;
 
-    game->start();
+    game->init();
     game->run();
     delete game;
     return 0;

@@ -1,14 +1,19 @@
 #pragma once
 
-#include "./../runtime/function/framework/object.hpp"
-
+#include "./../framework/object.hpp"
+#include "./../../core/log/log_system.hpp"
 #include "SDL2/SDL.h"
+
 
 //std
 #include <iostream>
 #include <vector>
 
 namespace Tysm {
+
+struct RenderInfo {
+    std::vector<Ty_Object*> render_object;
+};
 
 class RenderSystem {
 public:
@@ -17,7 +22,8 @@ public:
     void init();
     SDL_Renderer* getRenderer();
     //traversal all Ty_Object and show on the screen
-    void present(std::vector<Ty_Object*>);
+    void present(RenderInfo*);
+    void clear();
 
 private:
     SDL_Renderer* m_render;

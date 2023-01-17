@@ -39,4 +39,8 @@ void RenderSystem::clear()
     SDL_RenderPresent(m_render);
 }
 
+void RenderSystem::renderImg(const char* ImgPath)
+{
+
+}
 }  // namespace Tysm

@@ -23,6 +23,7 @@ public:
     SDL_Renderer* getRenderer();
     //traversal all Ty_Object and show on the screen
     void present(RenderInfo*);
+    void renderImg(const char*);
     void clear();
 
 private:

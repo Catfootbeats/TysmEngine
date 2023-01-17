@@ -1,5 +1,8 @@
 #pragma once
 
+//std
+#include <string>
+
 namespace Tysm {
 
 struct Position {
@@ -9,6 +12,7 @@ struct Position {
 class Ty_Object {
 public:
     virtual void show() = 0;
-    Position m_position;
+    Position position;
+    std::string name;
 };
 }  // namespace Tysm

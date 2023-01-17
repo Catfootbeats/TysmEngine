@@ -129,6 +129,7 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ostream.tcc \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc \
+ D:\VSCodeProject\SDL\tysm-game\game\main\game.hpp \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/engine.hpp \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_main.h \
@@ -142,7 +143,6 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/_mingw_stdarg.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/string.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/sec_api/string_s.h \
- D:/mingw-w64/posix/x86_64-w64-mingw32/include/strings.h \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/inttypes.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/math.h \
  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cmath \
@@ -355,4 +355,8 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/mingw-w64/posix/x86_64-w64-mingw32/include/assert.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/version.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/synchronous_factory.h \
- D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/window_system.hpp
+ D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/window_system.hpp \
+ D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
+ D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
+ D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
+ D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp

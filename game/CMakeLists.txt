@@ -3,7 +3,7 @@ option(GROUP_BY_EXPLORER ON)            # 按资源管理器目录结构分组
 
 list(APPEND SubDir "runtime")
 
-if(WIN32)
+if(WIN32 AND MSVC)
     add_compile_options(/W4)
     add_compile_options(/wd4819)
 endif()
@@ -22,10 +22,12 @@ file(GLOB_RECURSE SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/game/main/*.c)
 
 
-find_package(SDL2 CONFIG REQUIRED)
-find_package(SDL2_image CONFIG REQUIRED)
+ find_package(SDL2 CONFIG REQUIRED)
+ find_package(SDL2_image CONFIG REQUIRED)
+ find_package(SDL2_ttf CONFIG REQUIRED)
+find_package(SDL2_mixer CONFIG REQUIRED)
+ find_package(spdlog REQUIRED)
 
-find_package(spdlog REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
 # 对文件下分组
@@ -51,10 +53,11 @@ execute_process(COMMAND ${CMAKE_COMMAND} -E
 copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Release/resources")
 endif(CMAKE_BUILD_TYPE STREQUAL Debug)
 
-# TODO gcc编译器资源文件复制
-# else(execute_process(COMMAND ${CMAKE_COMMAND} -E
-# copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build"
-# ) )
+# gcc编译器资源文件复制
+else()
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/resources"
+)
 endif(MSVC)
 
 target_link_libraries(
@@ -62,10 +65,14 @@ target_link_libraries(
     PRIVATE
     ${SDL2_LIBRARIES}
     ${SDL2_image_LIBRARIES}
+    ${SDL2_ttf_LIBRARIES}
+    ${SDL2_mixer_LIBRARIES}
     SDL2::SDL2main
     SDL2::SDL2
-    SDL2_image::SDL2_image
-    tysm_runtime
+    $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>
+    $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>
+    $<IF:$<TARGET_EXISTS:SDL2_mixer::SDL2_mixer>,SDL2_mixer::SDL2_mixer,SDL2_mixer::SDL2_mixer-static>
     spdlog::spdlog
     spdlog::spdlog_header_only
+    tysm_runtime
 )

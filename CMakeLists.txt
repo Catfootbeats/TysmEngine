@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.8)
 project(tysm-game VERSION 0.1.0)
 
+# 设置指定的C++编译器版本是必须的，如果不设置，或者为OFF，则指定版本不可用时，会使用上一版本。
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 指定为C++11 版本
 set(CMAKE_CXX_STANDARD 20)
 
 # 添加所有子目录到 allSubDir
@@ -12,7 +16,13 @@ foreach(dirname ${allSubDir})
     add_subdirectory(${dirname})
 endforeach()
 
-
+if(CMAKE_BUILD_TYPE STREQUAL Release)
+if(WIN32)
+    file(COPY ${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.dll DESTINATION ${PROJECT_SOURCE_DIR}/build/game FOLLOW_SYMLINK_CHAIN)
+    else()
+    file(COPY ${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.so DESTINATION ${PROJECT_SOURCE_DIR}/build/game FOLLOW_SYMLINK_CHAIN)
+endif(WIN32)
+endif(CMAKE_BUILD_TYPE STREQUAL Release)
 # #########
 # include_directories(engine)
 # #GLOB和GLOB_RECURSE区别 后者包含子目录

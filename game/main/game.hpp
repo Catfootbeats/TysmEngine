@@ -1,9 +1,10 @@
 #pragma once
 
 #include "engine.hpp"
+#include "start_scene.hpp"
 #include "function/render/render_system.hpp"
 
-namespace Tysm {
+namespace Tysm_Game {
 enum GameState{
     StartMenu,
     Gaming
@@ -22,12 +23,15 @@ private:
     SDL_Window* window{nullptr};
     Tysm::WindowSystem* windowSystem{nullptr};
     Tysm::RenderSystem* renderSystem{nullptr};
-    Tysm::GameState gameState = Tysm::GameState::StartMenu;
+    Tysm_Game::GameState gameState = Tysm_Game::GameState::StartMenu;
+    Tysm_Game::StartScene* startScene{nullptr};
+    // TODO gamingScene
     bool isQuit{false};
 
     void start();
-    void startRender();
-    void gamingRender();
+    void logicUpdate();
+    void startSceneStart();
+    void gamingSceneStart();
 };
 
 }  // namespace Tysm

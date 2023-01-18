@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/VSCodeProject/SDL/tysm-game/game/main/game.cpp" "game/CMakeFiles/tysm-game.dir/main/game.cpp.obj" "gcc" "game/CMakeFiles/tysm-game.dir/main/game.cpp.obj.d"
   "D:/VSCodeProject/SDL/tysm-game/game/main/main.cpp" "game/CMakeFiles/tysm-game.dir/main/main.cpp.obj" "gcc" "game/CMakeFiles/tysm-game.dir/main/main.cpp.obj.d"
+  "D:/VSCodeProject/SDL/tysm-game/game/main/start_scene.cpp" "game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj" "gcc" "game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj.d"
   )
 
 # Targets to which this target links.

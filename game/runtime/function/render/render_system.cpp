@@ -20,10 +20,10 @@ SDL_Renderer* RenderSystem::getRenderer()
     return m_render;
 }
 
-void RenderSystem::present(RenderInfo* info)
+void RenderSystem::draw(std::vector<Ty_Object*>* objs)
 {
-    if (info != nullptr) {
-        for (Ty_Object* i : info->render_object) {
+    if (objs != nullptr) {
+        for (Ty_Object* i : *objs) {
             i->show();
         }
     }else {
@@ -36,6 +36,10 @@ void RenderSystem::clear()
 {
     SDL_SetRenderDrawColor(m_render, 255, 255, 255, 255);
     SDL_RenderClear(m_render);
+}
+
+void RenderSystem::present()
+{
     SDL_RenderPresent(m_render);
 }
 

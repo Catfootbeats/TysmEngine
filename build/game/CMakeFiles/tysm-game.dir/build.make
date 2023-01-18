@@ -98,16 +98,33 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tysm-game.dir/main/main.cpp.s"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\VSCodeProject\SDL\tysm-game\game\main\main.cpp -o CMakeFiles\tysm-game.dir\main\main.cpp.s
 
+game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: game/CMakeFiles/tysm-game.dir/flags.make
+game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: game/CMakeFiles/tysm-game.dir/includes_CXX.rsp
+game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tysm-game/game/main/start_scene.cpp
+game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: game/CMakeFiles/tysm-game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj -MF CMakeFiles\tysm-game.dir\main\start_scene.cpp.obj.d -o CMakeFiles\tysm-game.dir\main\start_scene.cpp.obj -c D:\VSCodeProject\SDL\tysm-game\game\main\start_scene.cpp
+
+game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tysm-game.dir/main/start_scene.cpp.i"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\VSCodeProject\SDL\tysm-game\game\main\start_scene.cpp > CMakeFiles\tysm-game.dir\main\start_scene.cpp.i
+
+game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tysm-game.dir/main/start_scene.cpp.s"
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && D:\mingw-w64\posix\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\VSCodeProject\SDL\tysm-game\game\main\start_scene.cpp -o CMakeFiles\tysm-game.dir\main\start_scene.cpp.s
+
 # Object files for target tysm-game
 tysm__game_OBJECTS = \
 "CMakeFiles/tysm-game.dir/main/game.cpp.obj" \
-"CMakeFiles/tysm-game.dir/main/main.cpp.obj"
+"CMakeFiles/tysm-game.dir/main/main.cpp.obj" \
+"CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj"
 
 # External object files for target tysm-game
 tysm__game_EXTERNAL_OBJECTS =
 
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/game.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/main.cpp.obj
+game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/build.make
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
@@ -117,19 +134,30 @@ game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_imaged
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_ttf.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_mixerd.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libspdlogd.a
-game/tysm-game.exe: game/runtime/libtysm_runtime.dll.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfmtd.a
+game/tysm-game.exe: game/runtime/libtysm_runtime.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libpng16d.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libzlibd.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbz2d.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_imaged.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_ttf.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlidec-static.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlicommon-static.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libpng16d.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libzlibd.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbz2d.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_mixerd.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libspdlogd.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfmtd.a
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/linkLibs.rsp
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/objects1
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tysm-game.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tysm-game.exe"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tysm-game.dir\link.txt --verbose=$(VERBOSE)
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/VSCodeProject/SDL/tysm-game/build/game/tysm-game.exe -installedDir D:/vcpkg/installed/x64-mingw-static/debug/bin -OutVariable out
 

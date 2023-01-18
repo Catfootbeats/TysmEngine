@@ -12,7 +12,7 @@ find_package(SDL2_mixer CONFIG REQUIRED)
 # Log system third party library
 find_package(spdlog CONFIG REQUIRED)
 
-add_library(${TARGET_NAME} SHARED ${AllFile})
+add_library(${TARGET_NAME} ${AllFile})
 # add_library(${TARGET_NAME} STATIC ${AllFile})
 
 target_link_libraries(

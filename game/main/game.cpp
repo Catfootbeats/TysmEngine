@@ -1,6 +1,6 @@
 #include "game.hpp"
 
-namespace Tysm {
+namespace Tysm_Game {
 Game::Game()
 {
     engine = new Tysm::Engine;
@@ -17,49 +17,64 @@ Game::~Game()
 void Game::init()
 {
     engine->TyInitEngine();
-    TyWindowCreateInfo createInfo;
+    Tysm::TyWindowCreateInfo createInfo;
     createInfo.title = "hello tysm game";
     createInfo.is_fullscreen = false;
     windowSystem->init(createInfo);
     window = windowSystem->getWindow();
     renderSystem = new Tysm::RenderSystem(window);
     windowSystem->setIcon("resources/tysm_icon.bmp");
-    start();
+    // start();
 }
 
 void Game::start()
 {
-    gameState = Tysm::GameState::Gaming;
+    gameState = Tysm_Game::GameState::Gaming;
 }
 
 void Game::run()
 {
     engine->run();
+    switch (gameState) {
+        case StartMenu:
+            startSceneStart();
+        case Gaming:
+            gamingSceneStart();
+    }
     //main game while
     while (!isQuit) {
         while (windowSystem->pollEvents()) {
             if (windowSystem->getEvent().type == SDL_QUIT) isQuit = true;
         }
+        renderSystem->clear();
         switch (gameState) {
             case StartMenu:
-                startRender();
+                startScene->run();
+                break;
             case Gaming:
-                gamingRender();
+                break;
         }
-        renderSystem->clear();
+        renderSystem->present();
         // TY_INFO("Game is running!");
     }
 }
 
-void Game::startRender()
+void Game::startSceneStart()
 {
-    static RenderInfo* startSceneRenderInfo{nullptr};
-    renderSystem->present(startSceneRenderInfo);
+    startScene = new Tysm_Game::StartScene(renderSystem,
+                                           windowSystem->getWindowSize()[0],
+                                           windowSystem->getWindowSize()[1]);
+    startScene->start();
 }
 
-void Game::gamingRender()
+void Game::gamingSceneStart()
 {
-    static RenderInfo* gamingSceneRenderInfo{nullptr};
-    renderSystem->present(gamingSceneRenderInfo);
+    // TODO move to gaming Scene
+    //renderSystem->present();
+}
+
+void Game::logicUpdate()
+{
+    
 }
 }  // namespace Tysm

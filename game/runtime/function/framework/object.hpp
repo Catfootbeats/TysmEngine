@@ -14,5 +14,7 @@ public:
     virtual void show() = 0;
     Position position;
     std::string name;
+
+    Ty_Object() = default;
 };
 }  // namespace Tysm

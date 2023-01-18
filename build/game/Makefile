@@ -177,6 +177,30 @@ main/main.cpp.s:
 	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/main.cpp.s
 .PHONY : main/main.cpp.s
 
+main/start_scene.obj: main/start_scene.cpp.obj
+.PHONY : main/start_scene.obj
+
+# target to build an object file
+main/start_scene.cpp.obj:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj
+.PHONY : main/start_scene.cpp.obj
+
+main/start_scene.i: main/start_scene.cpp.i
+.PHONY : main/start_scene.i
+
+# target to preprocess a source file
+main/start_scene.cpp.i:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.i
+.PHONY : main/start_scene.cpp.i
+
+main/start_scene.s: main/start_scene.cpp.s
+.PHONY : main/start_scene.s
+
+# target to generate assembly for a file
+main/start_scene.cpp.s:
+	cd /d D:\VSCodeProject\SDL\tysm-game\build && $(MAKE) $(MAKESILENT) -f game\CMakeFiles\tysm-game.dir\build.make game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.s
+.PHONY : main/start_scene.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -192,6 +216,9 @@ help:
 	@echo ... main/main.obj
 	@echo ... main/main.i
 	@echo ... main/main.s
+	@echo ... main/start_scene.obj
+	@echo ... main/start_scene.i
+	@echo ... main/start_scene.s
 .PHONY : help
 
 

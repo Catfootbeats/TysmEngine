@@ -16,13 +16,16 @@ foreach(dirname ${allSubDir})
     add_subdirectory(${dirname})
 endforeach()
 
-if(CMAKE_BUILD_TYPE STREQUAL Release)
+if(NOT MSVC)
 if(WIN32)
-    file(COPY ${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.dll DESTINATION ${PROJECT_SOURCE_DIR}/build/game FOLLOW_SYMLINK_CHAIN)
-    else()
-    file(COPY ${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.so DESTINATION ${PROJECT_SOURCE_DIR}/build/game FOLLOW_SYMLINK_CHAIN)
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.dll"  "${PROJECT_SOURCE_DIR}/build/game")
+else()
+    execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.so"  "${PROJECT_SOURCE_DIR}/build/game")
 endif(WIN32)
-endif(CMAKE_BUILD_TYPE STREQUAL Release)
+endif(NOT MSVC)
+
 # #########
 # include_directories(engine)
 # #GLOB和GLOB_RECURSE区别 后者包含子目录

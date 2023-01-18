@@ -26,6 +26,7 @@ file(GLOB_RECURSE SOURCE_FILES
  find_package(SDL2_image CONFIG REQUIRED)
  find_package(SDL2_ttf CONFIG REQUIRED)
 find_package(SDL2_mixer CONFIG REQUIRED)
+find_package(FMT REQUIRED)
  find_package(spdlog REQUIRED)
 
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
@@ -74,5 +75,6 @@ target_link_libraries(
     $<IF:$<TARGET_EXISTS:SDL2_mixer::SDL2_mixer>,SDL2_mixer::SDL2_mixer,SDL2_mixer::SDL2_mixer-static>
     spdlog::spdlog
     spdlog::spdlog_header_only
+    fmt::fmt
     tysm_runtime
 )

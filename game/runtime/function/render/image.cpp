@@ -25,7 +25,8 @@ void Image::RenderImg()
 float Image::calRatio()
 {
     SDL_QueryTexture(texture, NULL, NULL, &img_w, &img_h);
-    return img_w / img_h;
+    float w = (float)img_w;
+    return w / img_h;
 }
 
 Image::~Image()

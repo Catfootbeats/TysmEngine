@@ -6,5 +6,5 @@ CXX_DEFINES = -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL
 
 CXX_INCLUDES = @CMakeFiles/tysm-game.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g -std=gnu++2a
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++2a
 

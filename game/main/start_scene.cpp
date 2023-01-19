@@ -18,7 +18,7 @@ StartScene::StartScene(Tysm::RenderSystem* renderSystem,
 // write by user
 void StartScene::start()
 {
-    setStaticBg("resources/StartImg.png");
+    setStaticBg("resources/tianyi.png");
 }
 
 void StartScene::run()

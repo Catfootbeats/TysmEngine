@@ -126,40 +126,40 @@ game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/game.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/main.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/build.make
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_imaged.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_ttf.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_mixerd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libspdlogd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfmtd.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2main.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2main.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2_image.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2_ttf.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2_mixer.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libspdlog.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libfmt.a
 game/tysm-game.exe: game/runtime/libtysm_runtime.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libpng16d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libzlibd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbz2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_imaged.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_ttf.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlidec-static.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlicommon-static.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libpng16d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libzlibd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libbz2d.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_mixerd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libspdlogd.a
-game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/debug/lib/libfmtd.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libfreetype.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libpng16.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libzlib.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libbz2.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2main.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2_image.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2_ttf.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libfreetype.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libbrotlidec-static.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libbrotlicommon-static.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libpng16.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libzlib.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libbz2.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2_mixer.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libspdlog.a
+game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libfmt.a
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/linkLibs.rsp
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/objects1
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\VSCodeProject\SDL\tysm-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tysm-game.exe"
 	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tysm-game.dir\link.txt --verbose=$(VERBOSE)
-	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/VSCodeProject/SDL/tysm-game/build/game/tysm-game.exe -installedDir D:/vcpkg/installed/x64-mingw-static/debug/bin -OutVariable out
+	cd /d D:\VSCodeProject\SDL\tysm-game\build\game && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/VSCodeProject/SDL/tysm-game/build/game/tysm-game.exe -installedDir D:/vcpkg/installed/x64-mingw-static/bin -OutVariable out
 
 # Rule to build all files generated by this target.
 game/CMakeFiles/tysm-game.dir/build: game/tysm-game.exe

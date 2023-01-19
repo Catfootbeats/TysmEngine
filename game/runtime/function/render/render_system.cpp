@@ -34,7 +34,7 @@ void RenderSystem::draw(std::vector<Ty_Object*>* objs)
 
 void RenderSystem::clear()
 {
-    SDL_SetRenderDrawColor(m_render, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(m_render, 0, 0, 0, 255);
     SDL_RenderClear(m_render);
 }
 

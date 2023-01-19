@@ -15,9 +15,10 @@ WindowSystem::~WindowSystem()
 void WindowSystem::init(TyWindowCreateInfo createInfo)
 {
     if (createInfo.is_fullscreen) {
-        flags = SDL_WINDOW_FULLSCREEN | SDL_WINDOW_SHOWN;
+        flags = SDL_WINDOW_FULLSCREEN | SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE;
     } else {
-        flags = SDL_WINDOW_SHOWN;
+        flags =
+            SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE;
     }
     m_window = SDL_CreateWindow(createInfo.title, SDL_WINDOWPOS_CENTERED,
                                 SDL_WINDOWPOS_CENTERED, createInfo.width,

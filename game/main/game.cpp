@@ -20,6 +20,8 @@ void Game::init()
     Tysm::TyWindowCreateInfo createInfo;
     createInfo.title = "hello tysm game";
     createInfo.is_fullscreen = false;
+    createInfo.width = 1600;
+    createInfo.height = 900;
     windowSystem->init(createInfo);
     window = windowSystem->getWindow();
     renderSystem = new Tysm::RenderSystem(window);
@@ -73,8 +75,5 @@ void Game::gamingSceneStart()
     //renderSystem->present();
 }
 
-void Game::logicUpdate()
-{
-    
-}
-}  // namespace Tysm
+void Game::logicUpdate() {}
+}  // namespace Tysm_Game

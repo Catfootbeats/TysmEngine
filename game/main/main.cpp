@@ -9,7 +9,10 @@ int main(int args, char* argv[])
     }
     IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
     // anti-aliasing
-    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "best");
+
+    // https://www.bilibili.com/festival/VSF2023live?bvid=BV1rY4y1Z7Rj
+    // 真的超级好听，如果你看到这行注释一定要汀汀！ヾ(≧▽≦*)o
 
     Tysm_Game::Game* game = new Tysm_Game::Game;
 

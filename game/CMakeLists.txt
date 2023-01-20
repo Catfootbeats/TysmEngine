@@ -19,7 +19,10 @@ file(GLOB_RECURSE HEADER_FILES
     ${PROJECT_SOURCE_DIR}/game/main/*.hpp)
 file(GLOB_RECURSE SOURCE_FILES 
     ${PROJECT_SOURCE_DIR}/game/main/*.cpp 
-    ${PROJECT_SOURCE_DIR}/game/main/*.c)
+    ${PROJECT_SOURCE_DIR}/game/main/*.c
+    ${PROJECT_SOURCE_DIR}/game/main/*.o)
+
+# ico compile command: windres -i "ico.rc" -o "ico.o"  
 
 
  find_package(SDL2 CONFIG REQUIRED)
@@ -43,23 +46,6 @@ endforeach()
 
 add_executable(${PROJECT_NAME} ${AllFile})
 
-if(MSVC)
-if(CMAKE_BUILD_TYPE STREQUAL Debug)
-    execute_process(COMMAND ${CMAKE_COMMAND} -E
-copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Debug/resources"
-) 
-
-else()
-execute_process(COMMAND ${CMAKE_COMMAND} -E
-copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Release/resources")
-endif(CMAKE_BUILD_TYPE STREQUAL Debug)
-
-# gcc编译器资源文件复制
-else()
-execute_process(COMMAND ${CMAKE_COMMAND} -E
-copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/resources"
-)
-endif(MSVC)
 
 target_link_libraries(
     ${PROJECT_NAME}

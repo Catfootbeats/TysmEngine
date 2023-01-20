@@ -361,14 +361,15 @@ game/CMakeFiles/tysm-game.dir/main/game.cpp.obj: D:/VSCodeProject/SDL/tysm-game/
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
   D:/VSCodeProject/SDL/tysm-game/game/main/start_scene.hpp \
-  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
-  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
-  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp \
+  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
+  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
+  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/img.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/ui.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/image.hpp \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
+  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_timer.h
 
 game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: D:/VSCodeProject/SDL/tysm-game/game/main/main.cpp \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
@@ -730,10 +731,10 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: D:/VSCodeProject/SDL/tysm-game/
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
   D:/VSCodeProject/SDL/tysm-game/game/main/start_scene.hpp \
-  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
-  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
-  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp \
+  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
+  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
+  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/img.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/ui.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/image.hpp \
@@ -741,7 +742,7 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: D:/VSCodeProject/SDL/tysm-game/
 
 game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tysm-game/game/main/start_scene.cpp \
   D:/VSCodeProject/SDL/tysm-game/game/main/start_scene.hpp \
-  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
+  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -849,6 +850,15 @@ game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tys
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdio \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cerrno \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/vector \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_construct.h \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
+  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
+  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/core/log/log_system.hpp \
   D:/vcpkg/installed/x64-mingw-static/include/spdlog/spdlog.h \
   D:/vcpkg/installed/x64-mingw-static/include/spdlog/common.h \
@@ -857,8 +867,6 @@ game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tys
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/atomic \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_base.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_lockfree_defines.h \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/chrono \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ratio \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ctime \
@@ -867,8 +875,6 @@ game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tys
   D:/mingw-w64/posix/x86_64-w64-mingw32/include/pthread_time.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/parse_numbers.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/memory \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_construct.h \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/concurrence.h \
@@ -894,10 +900,6 @@ game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tys
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/optional \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/vector \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
-  D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
   D:/mingw-w64/posix/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
@@ -1098,7 +1100,6 @@ game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj: D:/VSCodeProject/SDL/tys
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
   D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
-  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/img.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/ui.hpp \
   D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/image.hpp \
@@ -1825,11 +1826,11 @@ D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/synchronous_factory.h
 
 D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h:
 
-D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp:
+D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp:
 
 D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp:
 
-D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp:
+D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp:
 
 D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/img.hpp:
 

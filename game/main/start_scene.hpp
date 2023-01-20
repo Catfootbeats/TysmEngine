@@ -1,30 +1,32 @@
 #pragma once
 
-#include "function/render/render_system.hpp"
 #include "function/framework/scene.hpp"
+#include "function/render/render_system.hpp"
 #include "function/ui/img.hpp"
-
 
 //std
 #include <string.h>
-#include <array>
+
 #include <algorithm>
+#include <array>
 
 namespace Tysm_Game {
-class StartScene{
+class StartScene {
 public:
-    StartScene(Tysm::RenderSystem*, int window_w,int window_h);
+    StartScene(Tysm::RenderSystem*, int window_w, int window_h);
     ~StartScene();
     void start();
     void run();
+    // Check and reCreate Scene
+    bool reCreateScene(int act_w,int act_h);
 
     // TODO move to scene class
     std::vector<Tysm::Ty_Object*> getObjs();
 
 private:
     Tysm::RenderSystem* m_render_system{nullptr};
-    int m_window_w,m_window_h;
     Tysm::Img* background{nullptr};
+    int m_window_w, m_window_h;
     Tysm::Position pos;
     std::vector<Tysm::Ty_Object*> objects;
 
@@ -35,5 +37,6 @@ private:
     void setStaticBg(const char*);
     void setDynamicBg();
     std::array<int, 2> calBgWidHei(int w);
+    std::array<int, 2> calPos(int img_h);
 };
 }  // namespace Tysm_Game

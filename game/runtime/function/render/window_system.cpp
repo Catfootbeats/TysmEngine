@@ -15,11 +15,15 @@ WindowSystem::~WindowSystem()
 void WindowSystem::init(TyWindowCreateInfo createInfo)
 {
     if (createInfo.is_fullscreen) {
-        flags = SDL_WINDOW_FULLSCREEN | SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE;
+        flags = SDL_WINDOW_FULLSCREEN_DESKTOP |
+                SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI;
     } else {
-        flags =
-            SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE;
+        flags = SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI;
     }
+
+    if (createInfo.can_Resize)
+        flags = flags | SDL_WINDOW_RESIZABLE;
+
     m_window = SDL_CreateWindow(createInfo.title, SDL_WINDOWPOS_CENTERED,
                                 SDL_WINDOWPOS_CENTERED, createInfo.width,
                                 createInfo.height, flags);
@@ -39,6 +43,16 @@ void WindowSystem::setTitle(const char* title)
     SDL_SetWindowTitle(m_window, title);
 }
 
+void WindowSystem::setWindowMinSize(int w, int h)
+{
+    SDL_SetWindowMinimumSize(m_window, w, h);
+}
+
+void WindowSystem::setWindowMaxSize(int w, int h)
+{
+    SDL_SetWindowMaximumSize(m_window, w, h);
+}
+
 SDL_Window* WindowSystem::getWindow() const
 {
     return m_window;
@@ -56,14 +70,15 @@ int WindowSystem::pollEvents()
 
 std::array<int, 2> WindowSystem::getWindowSize() const
 {
-    return std::array<int, 2>({m_width, m_height});
+    int w, h;
+    SDL_GetWindowSize(m_window, &w, &h);
+    return std::array<int, 2>({w, h});
 }
 
 void WindowSystem::setIcon(const char* path)
 {
     SDL_Surface* surface = SDL_LoadBMP(path);
-    if (!surface)
-        TY_CORE_FATAL("fatal to set window icon!");
+    if (!surface) TY_CORE_FATAL("fatal to set window icon!");
     SDL_SetWindowIcon(m_window, surface);
     SDL_FreeSurface(surface);
 }

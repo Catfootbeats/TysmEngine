@@ -13,6 +13,7 @@ struct TyWindowCreateInfo {
     int height{600};
     const char* title{"Tysm"};
     bool is_fullscreen;
+    bool can_Resize;
 };
 
 class WindowSystem {
@@ -23,6 +24,8 @@ public:
     int pollEvents();
     // TODO bool shouldClose() const;
     void setTitle(const char* title);
+    void setWindowMinSize(int w, int h);
+    void setWindowMaxSize(int w, int h);
     SDL_Window* getWindow() const;
     SDL_Event getEvent();
     std::array<int, 2> getWindowSize() const;

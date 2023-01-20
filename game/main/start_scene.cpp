@@ -1,7 +1,5 @@
 #include "start_scene.hpp"
 
-
-
 namespace Tysm_Game {
 
 StartScene::StartScene(Tysm::RenderSystem* renderSystem,
@@ -18,14 +16,15 @@ StartScene::StartScene(Tysm::RenderSystem* renderSystem,
 // write by user
 void StartScene::start()
 {
-    setStaticBg("resources/tianyi.png");
+    setStaticBg("resources/tianyi (Large).png");
+    // https://www.bilibili.com/festival/VSF2023live?bvid=BV1sx4y1g7Hh
+    // 真的很可爱的曲子 请务必要听一听！(～￣▽￣)～
 }
 
 void StartScene::run()
 {
     m_render_system->draw(&objects);
 }
-
 
 // TODO move to scene class
 std::vector<Tysm::Ty_Object*> StartScene::getObjs()
@@ -62,6 +61,7 @@ void StartScene::setStaticBg(const char* filePath)
     background = new Tysm::Img(&pos, filePath, m_window_w, m_window_h,
                                m_render_system->getRenderer());
     int act_h = calBgWidHei(m_window_w)[1];
+    pos.y = calPos(act_h)[1];
     background = new Tysm::Img(&pos, filePath, m_window_w, act_h,
                                m_render_system->getRenderer());
     background->name = "bg";
@@ -71,10 +71,28 @@ void StartScene::setStaticBg(const char* filePath)
 
 void StartScene::setDynamicBg() {}
 
+bool StartScene::reCreateScene(int act_w, int act_h)
+{
+    if (m_window_w != act_w || m_window_h != act_h) {
+        m_window_w = act_w;
+        m_window_h = act_h;
+        start();
+        return true;
+    }else{
+        return false;
+    }
+}
+
 std::array<int, 2> StartScene::calBgWidHei(int w)
 {
     float ratio = background->calRatio();
     float h = w / ratio;
-    return std::array<int, 2>{w,(int)h};
+    return std::array<int, 2>{w, (int) h};
 }
+
+std::array<int, 2> StartScene::calPos(int img_h)
+{
+    int h = m_window_h - img_h;
+    return std::array<int, 2>{0, h / 2};
 }
+}  // namespace Tysm_Game

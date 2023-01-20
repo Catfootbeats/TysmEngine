@@ -120,11 +120,13 @@ tysm__game_OBJECTS = \
 "CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj"
 
 # External object files for target tysm-game
-tysm__game_EXTERNAL_OBJECTS =
+tysm__game_EXTERNAL_OBJECTS = \
+"D:/VSCodeProject/SDL/tysm-game/game/main/ico.o"
 
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/game.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/main.cpp.obj
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/main/start_scene.cpp.obj
+game/tysm-game.exe: D:/VSCodeProject/SDL/tysm-game/game/main/ico.o
 game/tysm-game.exe: game/CMakeFiles/tysm-game.dir/build.make
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2main.a
 game/tysm-game.exe: D:/vcpkg/installed/x64-mingw-static/lib/libSDL2.a

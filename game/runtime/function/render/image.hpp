@@ -11,7 +11,11 @@
 namespace Tysm {
 class Image {
 public:
-    Image(Position*, const char*, int width, int height, SDL_Renderer*);
+    Image(Position*,
+          const char*,
+          int width,
+          int height,
+          SDL_Renderer*);
     void RenderImg();
     float calRatio();
     // TODO finish Image GetImage Width and Height

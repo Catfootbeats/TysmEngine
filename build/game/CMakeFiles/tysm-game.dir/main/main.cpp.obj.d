@@ -359,10 +359,10 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:\VSCodeProject\SDL\tysm-game\game\main\start_scene.hpp \
- D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
- D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
- D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp \
+ D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \
+ D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/render_system.hpp \
+ D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/img.hpp \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/ui/ui.hpp \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/image.hpp \

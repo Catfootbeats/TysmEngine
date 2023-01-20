@@ -1,10 +1,9 @@
 #pragma once
 
-#include "./../framework/object.hpp"
 #include "./../../core/log/log_system.hpp"
+#include "./../framework/object.hpp"
 #include "SDL2/SDL.h"
 #include "SDL_image.h"
-
 
 //std
 #include <iostream>
@@ -22,6 +21,7 @@ public:
     ~RenderSystem();
     void init();
     SDL_Renderer* getRenderer();
+    void reCreateRender(SDL_Window*);
     //traversal all Ty_Object and show on the screen
     void draw(std::vector<Ty_Object*>* objs);
     void renderImg(const char*);

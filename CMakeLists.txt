@@ -16,7 +16,17 @@ foreach(dirname ${allSubDir})
     add_subdirectory(${dirname})
 endforeach()
 
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/resources"
+)
+
 if(NOT MSVC)
+
+# gcc编译器资源文件复制
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/resources"
+)
+
 if(WIN32)
 execute_process(COMMAND ${CMAKE_COMMAND} -E
 copy_directory "${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.dll"  "${PROJECT_SOURCE_DIR}/build/game")
@@ -25,6 +35,20 @@ else()
 copy_directory "${PROJECT_SOURCE_DIR}/build/game/runtime/libtysm_runtime.so"  "${PROJECT_SOURCE_DIR}/build/game")
 endif(WIN32)
 endif(NOT MSVC)
+
+if(MSVC)
+if(CMAKE_BUILD_TYPE STREQUAL Debug)
+    execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Debug/resources"
+) 
+
+else()
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/game/main/resources"  "${PROJECT_SOURCE_DIR}/build/game/Release/resources")
+endif(CMAKE_BUILD_TYPE STREQUAL Debug)
+
+endif(MSVC)
+
 
 # #########
 # include_directories(engine)

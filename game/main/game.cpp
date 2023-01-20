@@ -1,5 +1,7 @@
 #include "game.hpp"
 
+#include <SDL_timer.h>
+
 namespace Tysm_Game {
 Game::Game()
 {
@@ -22,6 +24,7 @@ void Game::init()
     createInfo.is_fullscreen = false;
     createInfo.width = 1600;
     createInfo.height = 900;
+    createInfo.can_Resize = false;
     windowSystem->init(createInfo);
     window = windowSystem->getWindow();
     renderSystem = new Tysm::RenderSystem(window);
@@ -51,12 +54,15 @@ void Game::run()
         renderSystem->clear();
         switch (gameState) {
             case StartMenu:
+                startScene->reCreateScene(windowSystem->getWindowSize()[0],
+                                          windowSystem->getWindowSize()[1]);
                 startScene->run();
                 break;
             case Gaming:
                 break;
         }
         renderSystem->present();
+        SDL_Delay(1000 / 60);
         // TY_INFO("Game is running!");
     }
 }

@@ -4,6 +4,7 @@ build/*
 DevRef/*
 
 /cmake-kits.json
+/resources
 
 # Build results
 [Dd]ebug/

@@ -3,6 +3,8 @@
 build/*
 DevRef/*
 
+/cmake-kits.json
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

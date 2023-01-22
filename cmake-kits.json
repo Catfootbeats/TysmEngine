@@ -1,8 +1,0 @@
-[{
-    "name": "GCC 8.1.0 x64",
-    "compilers": {
-        "C": "D:/mingw-w64/posix/bin/gcc.exe",
-        "CXX": "D:/mingw-w64/posix/bin/g++.exe"
-    },
-    "toolchainFile": "D:/vcpkg/scripts/buildsystems/vcpkg.cmake"
-}]

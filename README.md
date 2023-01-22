@@ -1,9 +1,14 @@
-Linux和OSX需要用包管理器安装SDL2，spdlog
+# TysmEngine
 
-Windows则需要把dynamicLib里面的sdl2.dll扔到build/game下面，vscode配置vcpkg，安装spdlog:x64-mingw-static
-msvc装:x64-windows
-Windows下sdl2:x64-mingw-static里面的`SDL_stdinc.h`第69行`#include <strings.h>`被注释掉了，为了clangd在Windows下不报错
+This is a galgame engine used SDL2.
 
-Mac我没试过
+# The package used
 
-必须用gcc编译器，Windows记得装MinGW-w64的POSIX版
+- spdlog
+- SDL2
+- SDL2_ttf
+- SDL2_image
+- SDL2_mixer
+- fmt
+  
+Thanks all developer of these library.

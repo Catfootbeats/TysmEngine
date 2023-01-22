@@ -8,6 +8,11 @@ if(WIN32 AND MSVC)
     add_compile_options(/wd4819)
 endif()
 
+# if(MSVC)
+#     add_compile_options(/utf-8)
+#     message(STATUS "optional:/utf-8")   
+# endif(MSVC)
+
 # 遍历生成
 foreach(dirname ${SubDir})
     add_subdirectory(${dirname})

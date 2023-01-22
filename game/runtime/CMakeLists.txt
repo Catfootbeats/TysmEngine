@@ -12,6 +12,11 @@ find_package(SDL2_mixer CONFIG REQUIRED)
 # Log system third party library
 find_package(spdlog CONFIG REQUIRED)
 
+# if(MSVC)
+#     add_compile_options(/utf-8)
+#     message(STATUS "optional:/utf-8")   
+# endif(MSVC)
+
 add_library(${TARGET_NAME} ${AllFile})
 # add_library(${TARGET_NAME} STATIC ${AllFile})
 

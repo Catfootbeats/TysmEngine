@@ -10,6 +10,10 @@ set(CMAKE_CXX_STANDARD 20)
 # 添加所有子目录到 allSubDir
 list(APPEND allSubDir "game")
 
+# if(MSVC)
+#     add_compile_options(/utf-8)
+#     message(STATUS "optional:/utf-8")   
+# endif(MSVC)
 
 # 遍历生成
 foreach(dirname ${allSubDir})

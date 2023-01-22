@@ -35,10 +35,11 @@ void StartScene::run()
 
 void StartScene::titleStart()
 {
+    std::string str = "你好 ,Tysm Engine。";
     text_pos.x = (m_window_w / 3) + 50;
     text_pos.y = m_window_h / 4;
     title = new Tysm::UI_Text(
-        &text_pos, "resources/fonts/SourceHanSansCN-Normal.otf", 80, "你好，Tysm Engine。",
+        &text_pos, "resources/fonts/SourceHanSansCN-Normal.otf", 80, str,
         {255, 255, 255, 255}, m_render_system->getRenderer());
     if (!title) {
         TY_ERROR("Create Text FAIL!!!");

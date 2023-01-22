@@ -280,6 +280,8 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_locale.h \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
+ D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
+ D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/core/log/log_system.hpp \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/spdlog.h \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/common.h \
@@ -357,7 +359,6 @@ game/CMakeFiles/tysm-game.dir/main/main.cpp.obj: \
  D:/vcpkg/installed/x64-mingw-static/include/spdlog/details/synchronous_factory.h \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/render/window_system.hpp \
  D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
- D:/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:\VSCodeProject\SDL\tysm-game\game\main\start_scene.hpp \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/scene.hpp \
  D:/VSCodeProject/SDL/tysm-game/game/runtime/function/framework/object.hpp \

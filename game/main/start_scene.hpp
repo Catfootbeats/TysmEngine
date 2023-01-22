@@ -25,7 +25,7 @@ public:
 
 private:
     Tysm::RenderSystem* m_render_system{nullptr};
-    Tysm::Img* background{nullptr};
+    Tysm::UI_Img* background{nullptr};
     int m_window_w, m_window_h;
     Tysm::Position pos;
     std::vector<Tysm::Ty_Object*> objects;

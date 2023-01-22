@@ -1,7 +1,7 @@
 #include "img.hpp"
 
 namespace Tysm {
-Img::Img(Position* position,
+UI_Img::UI_Img(Position* position,
          const char* filePath,
          int width,
          int height,
@@ -11,12 +11,12 @@ Img::Img(Position* position,
                              width,height,renderer);
 }
 
-float Img::calRatio()
+float UI_Img::calRatio()
 {
     return background->calRatio();
 }
 
-void Img::show()
+void UI_Img::show()
 {
     background->RenderImg();
 }

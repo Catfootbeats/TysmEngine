@@ -58,11 +58,11 @@ Tysm::Ty_Object* StartScene::findObjByName(std::string str)
 
 void StartScene::setStaticBg(const char* filePath)
 {
-    background = new Tysm::Img(&pos, filePath, m_window_w, m_window_h,
+    background = new Tysm::UI_Img(&pos, filePath, m_window_w, m_window_h,
                                m_render_system->getRenderer());
     int act_h = calBgWidHei(m_window_w)[1];
     pos.y = calPos(act_h)[1];
-    background = new Tysm::Img(&pos, filePath, m_window_w, act_h,
+    background = new Tysm::UI_Img(&pos, filePath, m_window_w, act_h,
                                m_render_system->getRenderer());
     background->name = "bg";
     // background->position = pos;

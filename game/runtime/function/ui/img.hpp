@@ -3,7 +3,7 @@
 #include "ui.hpp"
 
 namespace Tysm {
-class Img : public Ty_Object {
+class UI_Img : public Ty_Object {
 public:
 
     int width, height;
@@ -11,7 +11,7 @@ public:
     float calRatio();
     void show();
 
-    Img(Position* position,
+    UI_Img(Position* position,
         const char* filePath,
         int width,
         int height,

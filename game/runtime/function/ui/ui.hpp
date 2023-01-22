@@ -7,9 +7,12 @@ namespace Tysm {
 
 class UI : public Ty_Object {
 public:
-    int width, height;
+    Position m_pos;
+    int m_width, m_height;
     bool MouseOver();
-    bool OnClick();
+    bool OnLeftClick();
+    bool OnRightClick();
+
 private:
 };
 

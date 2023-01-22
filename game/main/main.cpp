@@ -8,6 +8,7 @@ int main(int args, char* argv[])
         TY_CORE_ERROR("sdl init failed");
     }
     IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+    TTF_Init();
     // anti-aliasing
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "best");
 
@@ -21,6 +22,7 @@ int main(int args, char* argv[])
     delete game;
 
     IMG_Quit();
+    TTF_Quit();
     SDL_Quit();
 
     return 0;

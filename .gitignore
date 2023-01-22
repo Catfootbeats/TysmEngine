@@ -1,7 +1,7 @@
-.cache/
-.vscode/
-build/
-DevRef/
+.cache/*
+.vscode/*
+build/*
+DevRef/*
 
 # Build results
 [Dd]ebug/

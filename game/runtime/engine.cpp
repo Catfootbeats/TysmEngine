@@ -3,7 +3,10 @@
 namespace Tysm {
 Engine::Engine()
 {
-    Tysm::Log::Init();
+    #ifdef _DEBUG
+        Tysm::Log::Init();
+    #else
+    #endif
     TY_CORE_INFO("Log System Load!");
 };
 

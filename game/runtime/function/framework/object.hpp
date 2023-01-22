@@ -12,7 +12,7 @@ struct Position {
 class Ty_Object {
 public:
     virtual void show() = 0;
-    Position position;
+    Position* position;
     std::string name;
 
     Ty_Object() = default;

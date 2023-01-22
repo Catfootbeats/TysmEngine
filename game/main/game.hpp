@@ -1,14 +1,11 @@
 #pragma once
 
 #include "engine.hpp"
-#include "start_scene.hpp"
 #include "function/render/render_system.hpp"
+#include "start_scene.hpp"
 
 namespace Tysm_Game {
-enum GameState{
-    StartMenu,
-    Gaming
-};
+enum GameState { StartMenu, Gaming };
 class Game {
 public:
     Game();
@@ -32,6 +29,7 @@ private:
     void logicUpdate();
     void startSceneStart();
     void gamingSceneStart();
+    void altEnterFullSrc();
 };
 
-}  // namespace Tysm
+}  // namespace Tysm_Game

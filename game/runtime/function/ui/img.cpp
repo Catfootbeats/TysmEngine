@@ -2,13 +2,17 @@
 
 namespace Tysm {
 UI_Img::UI_Img(Position* position,
-         const char* filePath,
-         int width,
-         int height,
-         SDL_Renderer* renderer)
+               const char* filePath,
+               int width,
+               int height,
+               SDL_Renderer* renderer)
 {
-    background = new Tysm::Image(position, filePath,
-                             width,height,renderer);
+    background = new Tysm::Image(position, filePath, width, height, renderer);
+}
+
+UI_Img::~UI_Img()
+{
+    delete background;
 }
 
 float UI_Img::calRatio()
@@ -20,4 +24,4 @@ void UI_Img::show()
 {
     background->RenderImg();
 }
-}
+}  // namespace Tysm

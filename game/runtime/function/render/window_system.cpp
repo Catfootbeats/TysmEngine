@@ -15,14 +15,13 @@ WindowSystem::~WindowSystem()
 void WindowSystem::init(TyWindowCreateInfo createInfo)
 {
     if (createInfo.is_fullscreen) {
-        flags = SDL_WINDOW_FULLSCREEN_DESKTOP |
-                SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI;
+        flags = SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_SHOWN |
+                SDL_WINDOW_ALLOW_HIGHDPI;
     } else {
         flags = SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI;
     }
 
-    if (createInfo.can_Resize)
-        flags = flags | SDL_WINDOW_RESIZABLE;
+    if (createInfo.can_Resize) flags = flags | SDL_WINDOW_RESIZABLE;
 
     m_window = SDL_CreateWindow(createInfo.title, SDL_WINDOWPOS_CENTERED,
                                 SDL_WINDOWPOS_CENTERED, createInfo.width,
@@ -61,6 +60,11 @@ SDL_Window* WindowSystem::getWindow() const
 SDL_Event WindowSystem::getEvent()
 {
     return m_event;
+}
+
+void WindowSystem::setFullDesktop()
+{
+    SDL_SetWindowFullscreen(m_window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 }
 
 int WindowSystem::pollEvents()

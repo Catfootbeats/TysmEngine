@@ -19,18 +19,17 @@ file(GLOB_RECURSE HEADER_FILES
     ${PROJECT_SOURCE_DIR}/game/main/*.hpp)
 file(GLOB_RECURSE SOURCE_FILES 
     ${PROJECT_SOURCE_DIR}/game/main/*.cpp 
-    ${PROJECT_SOURCE_DIR}/game/main/*.c
-    ${PROJECT_SOURCE_DIR}/game/main/*.o)
+    ${PROJECT_SOURCE_DIR}/game/main/*.c)
 
 # ico compile command: windres -i "ico.rc" -o "ico.o"  
 
 
- find_package(SDL2 CONFIG REQUIRED)
- find_package(SDL2_image CONFIG REQUIRED)
- find_package(SDL2_ttf CONFIG REQUIRED)
+find_package(SDL2 CONFIG REQUIRED)
+find_package(SDL2_image CONFIG REQUIRED)
+find_package(SDL2_ttf CONFIG REQUIRED)
 find_package(SDL2_mixer CONFIG REQUIRED)
 find_package(FMT REQUIRED)
- find_package(spdlog REQUIRED)
+find_package(spdlog REQUIRED)
 
 include_directories(${PROJECT_SOURCE_DIR}/game/runtime)
 
@@ -44,8 +43,11 @@ foreach(fileItem ${AllFile})
     source_group("${GROUP}" FILES "${fileItem}")
 endforeach()
 
+if(WIN32)
+    add_executable(${PROJECT_NAME} ${AllFile} ${PROJECT_SOURCE_DIR}/game/main/ico.o)
+else()
 add_executable(${PROJECT_NAME} ${AllFile})
-
+endif(WIN32)
 
 target_link_libraries(
     ${PROJECT_NAME}

@@ -8,6 +8,7 @@ std::shared_ptr<spdlog::logger> Log::mClientLogger;
 
 void Log::Init()
 {
+    #ifdef _DEBUG
     spdlog::set_pattern("%^[%T] %n: %v%$");
 
     mCoreLogger = spdlog::stdout_color_mt("TYSM");
@@ -15,5 +16,7 @@ void Log::Init()
 
     mClientLogger = spdlog::stdout_color_mt("GAME");
     mClientLogger->set_level(spdlog::level::trace);
+    #else
+    #endif // DEBUG
 }
 }  // namespace Tysm

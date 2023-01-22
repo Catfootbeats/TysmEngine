@@ -29,6 +29,7 @@ public:
     SDL_Window* getWindow() const;
     SDL_Event getEvent();
     std::array<int, 2> getWindowSize() const;
+    void setFullDesktop();
     void setIcon(const char* path);
 
 private:

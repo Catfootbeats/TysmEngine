@@ -1,0 +1,7 @@
+Package: sdl2-mixer
+Feature: nativemidi
+Architecture: x86-windows
+Multi-Arch: same
+Description: Support for MIDI audio format on Windows and macOS.
+Type: Port
+Status: install ok installed

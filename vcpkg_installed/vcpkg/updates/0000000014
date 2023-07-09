@@ -1,0 +1,11 @@
+Package: sdl2-mixer
+Version: 2.6.1
+Port-Version: 2
+Depends: sdl2, vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 9ab6615159c1a027f2fac60f599c27caf5be277883ba9fb5a6b2a839a911df08
+Description: Multi-channel audio mixer library for SDL.
+Type: Port
+Default-Features: nativemidi
+Status: install ok half-installed

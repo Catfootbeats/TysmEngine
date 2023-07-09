@@ -1,0 +1,8 @@
+Package: freetype
+Feature: brotli
+Depends: brotli
+Architecture: x86-windows
+Multi-Arch: same
+Description: Support decompression of WOFF2 streams
+Type: Port
+Status: install ok half-installed

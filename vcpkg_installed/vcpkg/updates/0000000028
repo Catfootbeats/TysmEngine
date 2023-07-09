@@ -1,0 +1,8 @@
+Package: freetype
+Feature: zlib
+Depends: zlib
+Architecture: x86-windows
+Multi-Arch: same
+Description: Use zlib instead of internal library for DEFLATE
+Type: Port
+Status: install ok half-installed

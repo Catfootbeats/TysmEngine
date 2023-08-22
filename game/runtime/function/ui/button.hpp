@@ -17,6 +17,7 @@ public:
               std::string str,
               SDL_Renderer* renderer);
     void show();
+    void OnClick();
 
     ~UI_Button();
 

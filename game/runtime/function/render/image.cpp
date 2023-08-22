@@ -29,6 +29,11 @@ float Image::calRatio()
     return w / img_h;
 }
 
+std::array<int, 2> Image::GetImgWidHei()
+{
+    return std::array<int, 2> {rect.w,rect.h};
+}
+
 Image::~Image()
 {
     SDL_DestroyTexture(texture);

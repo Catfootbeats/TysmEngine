@@ -12,3 +12,5 @@ _deps
 CMakeUserPresets.json
 out/
 vcpkg_installed/
+.idea/
+cmake-build-debug/

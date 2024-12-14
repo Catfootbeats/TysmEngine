@@ -11,9 +11,9 @@ add_library(${TARGET_NAME} STATIC ${FILES})
 
 target_link_libraries(
     ${TARGET_NAME}
-    PRIVATE
+	PUBLIC
 	$<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
 	$<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
-    spdlog::spdlog 
+    spdlog::spdlog_header_only 
 )
 

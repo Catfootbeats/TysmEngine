@@ -13,4 +13,5 @@ CMakeUserPresets.json
 out/
 vcpkg_installed/
 .idea/
+.cache/
 cmake-build-debug/

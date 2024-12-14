@@ -40,7 +40,7 @@ bool Engine::sdl_init()
         std::getchar();
         return true;
     }
-    TY_CORE_INFO("SDL init");
+    TY_CORE_INFO("SDL init.");
     return false;
 }
 bool Engine::creat_window()
@@ -69,7 +69,7 @@ bool Engine::creat_window()
 
     // Update the window display
     SDL_UpdateWindowSurface(window);
-    TY_CORE_INFO("Window create");
+    TY_CORE_INFO("Window create.");
     return false;
 }
 
@@ -79,7 +79,7 @@ void Engine::close()
     SDL_DestroyWindow(window);
     // Quit SDL
     SDL_Quit();
-    TY_CORE_INFO("Tysm close");
+    TY_CORE_INFO("Tysm close.");
 }
 
 } // namespace tysm

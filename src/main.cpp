@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <cstdio>
-#include <fmt/color.h>
-#include <fmt/core.h>
+
+#include "log/log.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -10,7 +10,8 @@ int main(int argc, char *argv[])
         SDL_Log("can not init SDL:%s", SDL_GetError());
         return -1;
     }
-    fmt::print("成功!");
+    tysm::Log::Init();
+    TY_CORE_INFO("SUCCESS!!!")
     std::getchar();
 
     return 0;

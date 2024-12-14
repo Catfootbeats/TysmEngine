@@ -1,14 +1,27 @@
 {
-  "version": 2,
-  "configurePresets": [
-    {
-		"name": "x64-mingw-static",
-		"generator": "Ninja",
-		"binaryDir": "${sourceDir}/out/build/${presetName}",
-		"cacheVariables": {
-			"CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-			"VCPKG_TARGET_TRIPLET": "x64-mingw-static"
+	"version": 2,
+	"configurePresets": [
+		{
+			"name": "x64-mingw-debug",
+			"displayName": "Windows x64 Debug",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+				"VCPKG_TARGET_TRIPLET": "x64-mingw-static"
+			}
+		},
+		{
+			"name": "x64-mingw-release",
+			"displayName": "Windows x64 Release",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release",
+				"CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+				"VCPKG_TARGET_TRIPLET": "x64-mingw-static"
+			}
 		}
-    }
-  ]
+	]
 }

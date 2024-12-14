@@ -1,19 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
+project(tysm VERSION 0.0.1)
 
-project(tysm)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 20)
 
-find_package(fmt CONFIG REQUIRED)
-find_package(SDL2 CONFIG REQUIRED)
-    
+add_subdirectory(src)
 
-add_executable(tysm src/main.cpp)
+# set(VCPKG_TARGET_TRIPLET x64-mingw-static)
 
-target_link_libraries(
-        tysm
-        PRIVATE
-        fmt::fmt-header-only
-        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
-        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
-    )
-
-set(VCPKG_TARGET_TRIPLET x64-mingw-static)

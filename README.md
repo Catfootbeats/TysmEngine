@@ -72,3 +72,5 @@ cmake --build --preset={CMakePresets里面随便挑一个吧}
 ## TODO
 
 - [ ] 参数控制log输出
+- [ ] 自定义View
+- [ ] View注册

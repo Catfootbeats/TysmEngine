@@ -11,5 +11,7 @@ endif()
 
 add_subdirectory(src)
 
-# set(VCPKG_TARGET_TRIPLET x64-mingw-static)
+execute_process(COMMAND ${CMAKE_COMMAND} -E
+copy_directory "${PROJECT_SOURCE_DIR}/src/res"  "${PROJECT_BINARY_DIR}/src/res"
+)
 

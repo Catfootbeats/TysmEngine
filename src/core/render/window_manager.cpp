@@ -5,11 +5,11 @@
 #include <SDL_video.h>
 
 namespace tysm {
-void WindowManager::destroyWindow(SDL_Window *window)
+void WindowManager::destroyWindow(SDL_Window *&window)
 {
     SDL_DestroyWindow(window);
 }
-void WindowManager::createWindow(SDL_Window *window, TyWindowCreateInfo info)
+void WindowManager::createWindow(SDL_Window*& window, TyWindowCreateInfo info)
 {
     int flags{SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI};
     if (info.is_fullscreen)

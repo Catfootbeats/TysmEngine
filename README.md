@@ -15,17 +15,43 @@ src
 ```
 ## 如何构建
 
-> 目前只写了Windows MinGW和Linux GCC
+> 目前只写了Windows MinGW和Linux GCC Orz
 
 ### Windows
 
 #### 前置条件
 
 - vcpkg
-- cmake
+- CMake
+- Ninja
+- MinGW
+
+编写`CMakeUserPresets.json`
+```json
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "windows-debug",
+            "inherits": "{CMakePresets.json预设}",
+            "environment": {
+                "VCPKG_ROOT": "{vcpkg位置}"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "windows-debug",
+            "configuration": "Debug"
+        }
+    ]
+}
+```
 
 ```
-cmake --preset={你的用户配置}
+cmake --preset={你的用户配置名字}
+cmake --build --preset={你的用户配置名字}
 ```
 
 ### Linux
@@ -34,10 +60,13 @@ cmake --preset={你的用户配置}
 
 - SDL2
 - spdlog
-- cmake
+- CMake
+- Ninja
+- GCC
 
 ```
-cmake --preset={随便挑一个吧}
+cmake --preset={CMakePresets里面随便挑一个吧}
+cmake --build --preset={CMakePresets里面随便挑一个吧}
 ```
 
 ## TODO

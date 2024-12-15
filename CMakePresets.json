@@ -22,6 +22,36 @@
 				"CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
 				"VCPKG_TARGET_TRIPLET": "x64-mingw-static"
 			}
+		},
+		{
+			"name": "x64-gcc-debug",
+			"displayName": "Linux x64 Debug",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		},
+		{
+			"name": "x64-gcc-release",
+			"displayName": "Linux x64 Release",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release"
+			}
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "x64-linux-debug",
+			"configurePreset": "x64-gcc-debug",
+			"configuration": "Debug"
+		},
+		{
+			"name": "x64-linux-release",
+			"configurePreset": "x64-gcc-release",
+			"configuration": "Release"
 		}
 	]
 }

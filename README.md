@@ -7,18 +7,19 @@ SDL2 galgame engine
 ## 文件目录
 
 ```
-src // 源代码
- ├─core // 核心文件 (TODO:待修改)
- │  ├─function //功能层
- │  └─log // 日志
- ├─interpreter // 解释器
- └─view // galgame UI view
+src
+├── core
+│   ├── input //事件和输入
+│   └── render //渲染相关
+└── res //资源文件
 ```
 ## 如何构建
 
-> 目前只写了MinGW Orz
+> 目前只写了Windows MinGW和Linux GCC
 
-### 前置条件
+### Windows
+
+#### 前置条件
 
 - vcpkg
 - cmake
@@ -27,10 +28,17 @@ src // 源代码
 cmake --preset={你的用户配置}
 ```
 
-样例见
+### Linux
 
-- [CMakeUserPresets.json](./CMakeUserPresets.json) 
-- [CMakePresets.json](./CMakePresets.json)
+#### 前置条件
+
+- SDL2
+- spdlog
+- cmake
+
+```
+cmake --preset={随便挑一个吧}
+```
 
 ## TODO
 

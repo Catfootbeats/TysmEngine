@@ -15,6 +15,7 @@ void Log::Init()
 
     mClientLogger = spdlog::stdout_color_mt("GAME");
     mClientLogger->set_level(spdlog::level::trace);
+    TY_CORE_INFO("Log load.");
 #endif // DEBUG
 }
 } // namespace tysm

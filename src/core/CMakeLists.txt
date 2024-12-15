@@ -9,6 +9,7 @@ find_package(spdlog CONFIG REQUIRED)
 
 add_library(${TARGET_NAME} STATIC ${FILES})
 
+target_include_directories(${TARGET_NAME} PRIVATE .)
 target_link_libraries(
     ${TARGET_NAME}
 	PUBLIC

@@ -2,7 +2,7 @@
 #include <memory>
 #include <SDL.h>
 
-int SDL_main(int argc, char *args[])
+int main(int argc, char *args[])
 {
     std::unique_ptr<tysm::Engine> engine(new tysm::Engine);
     engine->run();

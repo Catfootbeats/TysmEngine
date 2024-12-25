@@ -1,5 +1,5 @@
 #include "timer.hpp"
-#include <SDL_Timer.h>
+#include <SDL_timer.h>
 
 namespace tysm {
 Timer::Timer()

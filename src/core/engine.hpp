@@ -3,6 +3,7 @@
 #include "utils/timer.hpp"
 #include "view/view_manager.hpp"
 #include <SDL_events.h>
+#include <SDL_render.h>
 
 namespace tysm {
 class Engine {

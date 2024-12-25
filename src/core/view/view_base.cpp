@@ -1,7 +1,9 @@
 #include "view_base.hpp"
 
 namespace tysm {
-ViewBase::ViewBase(SDL_Renderer*& renderer) : m_renderer(renderer) {
+ViewBase::ViewBase(SDL_Renderer *&renderer)
+    : m_renderer(renderer)
+{
 }
 
 void ViewBase::show()

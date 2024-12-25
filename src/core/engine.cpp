@@ -15,8 +15,9 @@ Engine::Engine()
 {
     Log::Init();
 
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0 && TTF_Init() < 0) {
         SDL_Quit();
+        TTF_Quit();
         TY_CORE_ERROR("Error initializing SDL:", SDL_GetError());
         return;
     }
@@ -28,8 +29,6 @@ Engine::Engine()
     RendererManager::initRenderer(renderer, mainWindow);
 
     viewManager.route(ViewManager::createView<TitleView>(renderer));
-    // TODO: 初始化页面管理器，注册页面
-
     texture = IMG_LoadTexture(renderer, "res/tianyi.png");
     if (!texture) {
         TY_CORE_ERROR(IMG_GetError());
@@ -39,6 +38,7 @@ Engine::Engine()
 Engine::~Engine()
 {
     RendererManager::destroyRenderer(renderer);
+    TTF_Quit();
     SDL_Quit();
     TY_CORE_INFO("Tysm close.");
 }
@@ -51,15 +51,13 @@ void Engine::run()
         // Event
         // Update Logic
         // Manager View
-        viewManager.show(renderer);
+        viewManager.show();
         // Render
         SDL_RenderPresent(renderer);
 
         //FPS Limitation
         frame++;
-        //如果我们需要限制帧率
         if (fpsLimit == true && fps.get_ticks() < 1000 / FRAMES_PER_SECOND) {
-            //休眠一段时间，时长为当前帧的剩余时间。
             SDL_Delay(1000 / FRAMES_PER_SECOND - fps.get_ticks());
         }
     }

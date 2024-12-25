@@ -11,12 +11,12 @@ class ViewManager {
 public:
     ViewManager();
     template <typename T>
-    static std::unique_ptr<T> createView(SDL_Renderer*& renderer)
+    static std::unique_ptr<T> createView(SDL_Renderer *&renderer)
     {
         return std::make_unique<T>(renderer);
     }
     void route(std::unique_ptr<ViewBase> view);
-    void show(SDL_Renderer *&) const;
+    void show() const;
 
 private:
     std::unique_ptr<ViewBase> currentView;

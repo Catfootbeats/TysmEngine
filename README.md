@@ -74,3 +74,10 @@ cmake --build --preset={CMakePresets里面随便挑一个吧}
 - [ ] 参数控制log输出
 - [ ] 自定义View
 - [ ] View注册
+
+## RoadMap
+
+- 实现最基础的galgame功能
+- 读取galgame文本
+- 自定义页面
+- 解释页面ui

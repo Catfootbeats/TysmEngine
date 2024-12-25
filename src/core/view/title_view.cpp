@@ -1,5 +1,9 @@
 #include "title_view.hpp"
 
 namespace tysm {
-void TitleView::show() {}
+ TitleView::TitleView(SDL_Renderer *& renderer):ViewBase(renderer)
+{
+
+}
+
 } // namespace tysm

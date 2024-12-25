@@ -1,0 +1,84 @@
+---
+title: tysm
+---
+classDiagram
+
+    class Engine{
+        + Engine()
+        + ~Engine()
+        + run() void
+        - SDL_Event mainEvent
+        - SDL_Window* mainWindow
+        - SDL_Renderer* renderer
+        - std::unique_ptr<DialogView> dialogView
+        - std::unique_ptr<TitleView> titleView
+        - ViewManager viewManager
+        - bool isQuit
+    }
+
+    class ViewManager{
+    + ViewManager()
+    + ~ViewManager()
+    + route(VIEW) void
+    + show(SDL_Renderer*&) void
+    }
+    ViewManager --o Engine
+
+
+    class WindowManager{
+        + static ...()
+        - WindowManager()
+        - ~WindowManager()
+    }
+    <<static>> WindowManager
+    WindowManager --o Engine
+
+    class RendererManager{
+        + static ...()
+        - RendererManager()
+        - ~RendererManager()
+    }
+    <<static>> RendererManager
+    RendererManager --o Engine
+
+    class DialogView
+    DialogView --o Engine
+    DialogView --> ViewManager: pointer or reference
+    ViewBase <|-- DialogView
+
+    class TitleView{
+        +std::string title
+    }
+    TitleView --o Engine
+    TitleView --> ViewManager: pointer or reference
+    ViewBase <|-- TitleView
+
+    class ViewBase{
+        + show() void
+        + enable() void
+        + disable() void
+        + isActive() bool
+        - bool state
+        # std::list<TyObject&> objects
+    }
+    note for ViewBase "View包含active和inactive两种状态，通过调用enable() disable()切换"
+    note for ViewBase "实现show()渲染objects"
+    note for ViewBase "子类只需要列表初始化objects并且添加TyObject"
+    class VIEW
+    <<Enumeration>> VIEW
+    VIEW : TITLE_VIEW
+    VIEW : DIALOG_VIEW
+
+    class TyObject{
+        + render() void
+    }
+
+    class Image{
+    }
+    Image --|> TyObject
+    Image --o TitleView
+
+    class Text{
+    }
+    Text --|> TyObject
+    Text --o TitleView

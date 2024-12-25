@@ -1,7 +1,6 @@
 #include <SDL_error.h>
 #include <SDL_events.h>
 #include <SDL_image.h>
-#include <SDL_keycode.h>
 #include <SDL_render.h>
 #include <SDL_video.h>
 
@@ -27,8 +26,9 @@ Engine::Engine()
     TyWindowCreateInfo windowInfo;
     WindowManager::createWindow(mainWindow, windowInfo);
     RendererManager::initRenderer(renderer, mainWindow);
-    viewManager.route(VIEW::DIALOG_VIEW);
-    // 初始化页面管理器，注册页面
+
+    viewManager.route(ViewManager::createView<TitleView>(renderer));
+    // TODO: 初始化页面管理器，注册页面
 
     texture = IMG_LoadTexture(renderer, "res/tianyi.png");
     if (!texture) {
@@ -47,14 +47,21 @@ void Engine::run()
 {
     while (!isQuit) {
         EventManager::pollEvent(mainEvent, isQuit);
+        SDL_RenderClear(renderer);
         // Event
         // Update Logic
         // Manager View
+        viewManager.show(renderer);
         // Render
-        SDL_RenderClear(renderer);
-        // view copy
-        SDL_RenderCopy(renderer, texture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
+
+        //FPS Limitation
+        frame++;
+        //如果我们需要限制帧率
+        if (fpsLimit == true && fps.get_ticks() < 1000 / FRAMES_PER_SECOND) {
+            //休眠一段时间，时长为当前帧的剩余时间。
+            SDL_Delay(1000 / FRAMES_PER_SECOND - fps.get_ticks());
+        }
     }
 }
 

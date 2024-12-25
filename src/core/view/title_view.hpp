@@ -1,11 +1,10 @@
 #pragma once
-#include "IView.hpp"
+#include "view_base.hpp"
 namespace tysm {
 
-class TitleView : public IView {
+class TitleView : public ViewBase {
 public:
-    TitleView() = default;
-    void show() override;
+    TitleView(SDL_Renderer*& renderer);
 };
 
 } // namespace tysm

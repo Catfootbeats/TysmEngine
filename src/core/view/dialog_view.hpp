@@ -1,9 +1,8 @@
 #pragma once
-#include "view/IView.hpp"
+#include "view_base.hpp"
 namespace tysm {
-class DialogView : public IView {
+class DialogView : public ViewBase {
 public:
-    DialogView() = default;
-    void show() override;
+    void show();
 };
 } // namespace tysm

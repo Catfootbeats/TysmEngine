@@ -14,4 +14,5 @@ out/
 vcpkg_installed/
 .idea/
 .cache/
+.vs/
 cmake-build-debug/

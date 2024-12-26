@@ -2,13 +2,18 @@
 
 namespace tysm {
 ViewBase::ViewBase(SDL_Renderer *&renderer)
-    : m_renderer(renderer)
+    : m_renderer(renderer){}
+
+ ViewBase::~ViewBase()
 {
+     for (auto object : m_objects)
+         delete object;
 }
+
 
 void ViewBase::show()
 {
     for (auto &object : m_objects)
-        object.render();
+        object->render();
 }
 } // namespace tysm

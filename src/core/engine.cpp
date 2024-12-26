@@ -15,14 +15,16 @@ Engine::Engine()
 {
     Log::Init();
 
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0 && TTF_Init() < 0) {
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         SDL_Quit();
-        TTF_Quit();
         TY_CORE_ERROR("Error initializing SDL:", SDL_GetError());
         return;
     }
-    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
-    TY_CORE_INFO("SDL init.");
+    if (TTF_Init() < 0) {
+        SDL_Quit();
+        TY_CORE_ERROR("Error initializing TTF:", SDL_GetError());
+        return;
+    }
 
     TyWindowCreateInfo windowInfo;
     WindowManager::createWindow(mainWindow, windowInfo);

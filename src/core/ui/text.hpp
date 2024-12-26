@@ -9,7 +9,7 @@ public:
     Text(SDL_Renderer *&renderer,
          TTF_Font *font,
          const char *text,
-         SDL_Color color);
+         SDL_Color color = {0,0,0});
     ~Text() = default;
 };
 } // namespace tysm

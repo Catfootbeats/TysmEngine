@@ -12,9 +12,7 @@ public:
     explicit TitleView(SDL_Renderer *&renderer);
 
 private:
-    TTF_Font *titleFont;
-    Image background;
-    //Text title;
+    TTF_Font* titleFont;
 };
 
 } // namespace tysm

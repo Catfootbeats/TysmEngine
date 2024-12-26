@@ -13,9 +13,11 @@ Text::Text(SDL_Renderer *&renderer,
     : TyObject(renderer)
 {
     SDL_Surface *surface = TTF_RenderText_Solid(font, text, color);
+    if (!surface)
+        TY_CORE_ERROR(SDL_GetError());
     texture = SDL_CreateTextureFromSurface(renderer, surface);
     if (!texture)
-        TY_CORE_ERROR("Load font failed!");
+        TY_CORE_ERROR(TTF_GetError());
     SDL_FreeSurface(surface);
 }
 } // namespace tysm

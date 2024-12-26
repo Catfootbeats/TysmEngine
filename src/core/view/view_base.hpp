@@ -8,11 +8,11 @@ namespace tysm {
 class ViewBase {
 public:
     ViewBase(SDL_Renderer *&renderer);
-    ~ViewBase() = default;
+    ~ViewBase();
     void show();
 
 protected:
     SDL_Renderer *&m_renderer;
-    std::vector<TyObject> m_objects;
+    std::vector<TyObject*> m_objects;
 };
 } // namespace tysm

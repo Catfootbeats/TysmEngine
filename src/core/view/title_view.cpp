@@ -8,9 +8,14 @@ namespace tysm {
 TitleView::TitleView(SDL_Renderer *&renderer)
     : ViewBase(renderer)
 {
-    titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 24);
+    titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 72);
     m_objects.push_back(new Image{renderer, "res/tianyi.png"});
-    m_objects.push_back(new Text{renderer, (titleFont),"hello, tysm !!!!!"});
+    m_objects.push_back(new Text{renderer, titleFont,"你好, tysm !!!!!"});
 }
+TitleView::~TitleView()
+{
+    TTF_CloseFont(titleFont);
+}
+
 
 } // namespace tysm

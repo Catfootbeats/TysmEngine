@@ -4,7 +4,7 @@
 namespace tysm {
 void RendererManager::initRenderer(SDL_Renderer *&renderer, SDL_Window *&window)
 {
-    renderer = SDL_CreateRenderer(window, -1, 0);
+    renderer = SDL_CreateRenderer(window, 1, 0);
     if (!renderer) {
         TY_CORE_ERROR(SDL_GetError());
     }

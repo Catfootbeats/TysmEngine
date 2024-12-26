@@ -20,9 +20,12 @@ Engine::Engine()
         TY_CORE_ERROR("Error initializing SDL:", SDL_GetError());
         return;
     }
+    if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1"))
+        TY_CORE_WARN("Linear texture filtering not enabled!");
+
     if (TTF_Init() < 0) {
         SDL_Quit();
-        TY_CORE_ERROR("Error initializing TTF:", SDL_GetError());
+        TY_CORE_ERROR("Error initializing TTF:", TTF_GetError());
         return;
     }
 
@@ -31,10 +34,6 @@ Engine::Engine()
     RendererManager::initRenderer(renderer, mainWindow);
 
     viewManager.route(ViewManager::createView<TitleView>(renderer));
-    texture = IMG_LoadTexture(renderer, "res/tianyi.png");
-    if (!texture) {
-        TY_CORE_ERROR(IMG_GetError());
-    }
 }
 
 Engine::~Engine()

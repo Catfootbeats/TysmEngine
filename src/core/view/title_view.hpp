@@ -10,6 +10,7 @@ namespace tysm {
 class TitleView : public ViewBase {
 public:
     explicit TitleView(SDL_Renderer *&renderer);
+    ~TitleView();
 
 private:
     TTF_Font* titleFont;

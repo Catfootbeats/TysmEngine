@@ -5,8 +5,9 @@ TyObject::TyObject(SDL_Renderer *&renderer) : renderer(renderer) {}
 
 TyObject::~TyObject()
 {
-    delete srcRect;
-    delete dstRect;
+    if (!dstRect)
+        delete dstRect;
+    // move dstRect to render
     SDL_DestroyTexture(texture);
 }
 

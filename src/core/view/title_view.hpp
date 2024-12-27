@@ -1,17 +1,16 @@
 #pragma once
-#include "ui/image.hpp"
-#include "ui/text.hpp"
 #include "view_base.hpp"
+#include "view_manager.hpp"
 
 #include <SDL2/SDL_ttf.h>
 #include <SDL_render.h>
 namespace tysm {
 
-class TitleView : public ViewBase {
+class TitleView final : public ViewBase {
 public:
-    explicit TitleView(SDL_Renderer *&renderer);
-    ~TitleView();
-
+    explicit TitleView(SDL_Renderer *&renderer, ViewManager &viewManager);
+    ~TitleView() override;
+    void update(SDL_Event& event) override;
 private:
     TTF_Font* titleFont;
 };

@@ -1,12 +1,13 @@
 #include "title_view.hpp"
 #include "ui/image.hpp"
 #include "ui/text.hpp"
+#include "view/view_manager.hpp"
+#include "test/test_view.hpp"
 #include <SDL_ttf.h>
-#include <memory>
 
 namespace tysm {
-TitleView::TitleView(SDL_Renderer *&renderer)
-    : ViewBase(renderer)
+TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
+    : ViewBase(renderer,viewManager)
 {
     titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 72);
     m_objects.push_back(new Image{renderer, "res/tianyi.png"});
@@ -15,7 +16,16 @@ TitleView::TitleView(SDL_Renderer *&renderer)
 TitleView::~TitleView()
 {
     TTF_CloseFont(titleFont);
+    close();
 }
+
+void TitleView::update(SDL_Event& event)
+{
+    if (event.type == SDL_KEYDOWN)
+        if (event.key.keysym.sym == SDLK_SPACE)
+            m_viewManager.route(ViewManager::createView<TestView>(m_renderer,m_viewManager));
+}
+
 
 
 } // namespace tysm

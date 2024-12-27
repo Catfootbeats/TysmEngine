@@ -1,15 +1,23 @@
 #include "view_base.hpp"
 
-namespace tysm {
-ViewBase::ViewBase(SDL_Renderer *&renderer)
-    : m_renderer(renderer){}
+#include "view/view_manager.hpp"
 
- ViewBase::~ViewBase()
+namespace tysm {
+ViewBase::ViewBase(SDL_Renderer *&renderer, ViewManager &viewManager)
+    : m_renderer(renderer), m_viewManager(viewManager){}
+
+ViewBase::~ViewBase()
 {
-     for (auto object : m_objects)
-         delete object;
+     close();
 }
 
+void ViewBase::close()
+{
+    for (int i = 0; i < m_objects.size(); ++i) {
+        delete m_objects[i];
+    }
+    m_objects.clear();
+}
 
 void ViewBase::show()
 {

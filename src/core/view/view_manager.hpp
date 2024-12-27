@@ -1,24 +1,25 @@
 #pragma once
 
-#include "dialog_view.hpp"
-#include "title_view.hpp"
-#include "view_base.hpp"
 #include <SDL_render.h>
+#include <SDL_events.h>
 #include <memory>
-#include <vector>
+
+#include "view/iview.hpp"
+
 namespace tysm {
 class ViewManager {
 public:
     ViewManager();
     template <typename T>
-    static std::unique_ptr<T> createView(SDL_Renderer *&renderer)
+    static std::unique_ptr<T> createView(SDL_Renderer *&renderer,ViewManager &viewManager)
     {
-        return std::make_unique<T>(renderer);
+        return std::make_unique<T>(renderer,viewManager);
     }
-    void route(std::unique_ptr<ViewBase> view);
-    void show() const;
+    void route(std::unique_ptr<IView> view);
+    void update(SDL_Event& event);
+    void show();
 
 private:
-    std::unique_ptr<ViewBase> currentView;
+    std::unique_ptr<IView> currentView{nullptr};
 };
 } // namespace tysm

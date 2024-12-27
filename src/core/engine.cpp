@@ -3,12 +3,15 @@
 #include <SDL_image.h>
 #include <SDL_render.h>
 #include <SDL_video.h>
+#include <SDL_ttf.h>
 
 #include "engine.hpp"
 #include "input/event_manager.hpp"
 #include "log.hpp"
 #include "render/renderer_manager.hpp"
 #include "render/window_manager.hpp"
+#include "view/title_view.hpp"
+
 
 namespace tysm {
 Engine::Engine()
@@ -20,6 +23,7 @@ Engine::Engine()
         TY_CORE_ERROR("Error initializing SDL:", SDL_GetError());
         return;
     }
+
     if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1"))
         TY_CORE_WARN("Linear texture filtering not enabled!");
 
@@ -29,11 +33,10 @@ Engine::Engine()
         return;
     }
 
-    TyWindowCreateInfo windowInfo;
+    constexpr TyWindowCreateInfo windowInfo;
     WindowManager::createWindow(mainWindow, windowInfo);
     RendererManager::initRenderer(renderer, mainWindow);
-
-    viewManager.route(ViewManager::createView<TitleView>(renderer));
+    viewManager.route(ViewManager::createView<TitleView>(renderer,viewManager));
 }
 
 Engine::~Engine()
@@ -47,15 +50,17 @@ Engine::~Engine()
 void Engine::run()
 {
     while (!isQuit) {
-        EventManager::pollEvent(mainEvent, isQuit);
-        SDL_RenderClear(renderer);
         // Event
-        // Update Logic
-        // Manager View
-        viewManager.show();
+        while (SDL_PollEvent(&mainEvent)) {
+            if (mainEvent.type == SDL_QUIT)
+                isQuit = true;
+            // Update Logic
+            viewManager.update(mainEvent);
+        }
         // Render
+        SDL_RenderClear(renderer);
+        viewManager.show();
         SDL_RenderPresent(renderer);
-
         //FPS Limitation
         frame++;
         if (fpsLimit == true && fps.get_ticks() < 1000 / FRAMES_PER_SECOND) {

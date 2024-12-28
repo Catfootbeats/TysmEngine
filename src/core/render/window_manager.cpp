@@ -41,13 +41,32 @@ void WindowManager::setWindowMaxSize(SDL_Window *window, int w, int h)
 {
     SDL_SetWindowMaximumSize(window, w, h);
 }
+bool WindowManager::getIsFullDesktop(SDL_Window *window)
+{
+    if (SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP)
+        return true;
+    return false;
+}
+
 void WindowManager::setFullDesktop(SDL_Window *window)
 {
     SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 }
+void WindowManager::setWindowed(SDL_Window *window)
+{
+    SDL_SetWindowFullscreen(window, 0);
+}
 void WindowManager::getWindowSize(SDL_Window *window, int &w, int &h)
 {
     SDL_GetWindowSize(window, &w, &h);
+}
+void WindowManager::setWindowedOrFullDesktop(SDL_Window *window)
+{
+    if (SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP) {
+        setWindowed(window);
+        return;
+    }
+    setFullDesktop(window);
 }
 void WindowManager::setIcon(SDL_Window *window, const char *path)
 {

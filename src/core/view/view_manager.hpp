@@ -17,7 +17,9 @@ public:
     }
     void route(std::unique_ptr<IView> view);
     void update(SDL_Event& event);
+    void quit();
     void show();
+    float canvasRatio = 1920/1080; // w/h
 
 private:
     std::unique_ptr<IView> currentView{nullptr};

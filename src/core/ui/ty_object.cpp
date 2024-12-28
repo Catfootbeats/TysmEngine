@@ -9,10 +9,11 @@ TyObject::~TyObject()
         delete dstRect;
     // move dstRect to render
     SDL_DestroyTexture(texture);
+
 }
 
 void TyObject::render()
 {
-    SDL_RenderCopy(renderer, texture, srcRect, dstRect);
+    SDL_RenderCopy(renderer, texture, nullptr, dstRect);
 }
 } // namespace tysm

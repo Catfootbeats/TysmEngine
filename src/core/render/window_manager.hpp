@@ -17,7 +17,10 @@ public:
     static void setWindowMinSize(SDL_Window *window, int w, int h);
     static void setWindowMaxSize(SDL_Window *window, int w, int h);
     static void getWindowSize(SDL_Window *window, int &w, int &h);
+    static bool getIsFullDesktop(SDL_Window* window);
     static void setFullDesktop(SDL_Window *window);
+    static void setWindowed(SDL_Window *window);
+    static void setWindowedOrFullDesktop(SDL_Window *window);
     static void setIcon(SDL_Window *window, const char *path);
     static void errorMassageBox(SDL_Window *window, const char *msg);
     static void warnMassageBox(SDL_Window *window, const char *msg);

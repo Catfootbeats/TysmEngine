@@ -5,7 +5,7 @@
 namespace tysm {
 class TyObject {
 public:
-    TyObject(SDL_Renderer *&renderer);
+    explicit TyObject(SDL_Renderer *&renderer);
     ~TyObject();
     void render();
 
@@ -13,8 +13,7 @@ private:
     SDL_Renderer *&renderer;
 
 protected:
+    SDL_Rect* dstRect{nullptr};
     SDL_Texture *texture{nullptr};
-    SDL_Rect *srcRect{nullptr};
-    SDL_Rect *dstRect{nullptr};
 };
 } // namespace tysm

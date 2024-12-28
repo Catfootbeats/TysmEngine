@@ -31,4 +31,10 @@ void ViewManager::show()
     currentView->show();
 }
 
+void ViewManager::quit()
+{
+    currentView.reset();
+}
+
+
 } // namespace tysm

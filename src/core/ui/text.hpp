@@ -11,7 +11,7 @@ public:
          TTF_Font *font,
          const char *text,
          SDL_Color color = {0, 0, 0},
-         vec2 pos = {0, 0},
+         Position pos = {0, 0},
          float size = 1.0);
 };
 } // namespace tysm

@@ -7,22 +7,26 @@
 
 namespace tysm {
 /*
-if size == 0, dstRect = nullptr, fill screen
+如果size是0 则铺满屏幕（真的有人会把文字铺满屏幕吗）
 */
 Text::Text(SDL_Renderer *&renderer,
            TTF_Font *font,
            const char *text,
            SDL_Color color,
-           vec2 pos,
+           Position pos,
            float size)
     : TyObject(renderer)
 {
-    SDL_Surface *surface = TTF_RenderUTF8_Solid(font, text, color);
-    if (!surface)
-        TY_CORE_ERROR(SDL_GetError());
+    SDL_Surface *surface = TTF_RenderUTF8_Blended(font, text, color);
+    if (!surface) {
+        TY_CORE_ERROR("Create text surface failed", SDL_GetError());
+        return;
+    }
     texture = SDL_CreateTextureFromSurface(renderer, surface);
-    if (!texture)
-        TY_CORE_ERROR(TTF_GetError());
+    if (!texture) {
+        TY_CORE_ERROR("Create text texture failed", TTF_GetError());
+        return;
+    }
     if (size != 0)
         dstRect =
             new SDL_Rect{pos.x, pos.y, static_cast<int>(surface->w * size),

@@ -12,6 +12,6 @@ endif()
 add_subdirectory(src)
 
 execute_process(COMMAND ${CMAKE_COMMAND} -E
-copy_directory "${PROJECT_SOURCE_DIR}/src/res"  "${PROJECT_BINARY_DIR}/src/res"
+copy_directory "${PROJECT_SOURCE_DIR}/src/res"  "${PROJECT_BINARY_DIR}/src/res" "${PROJECT_BINARY_DIR}/res"
 )
 

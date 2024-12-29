@@ -4,11 +4,13 @@
 
 namespace tysm {
 ViewBase::ViewBase(SDL_Renderer *&renderer, ViewManager &viewManager)
-    : m_renderer(renderer), m_viewManager(viewManager){}
+    : m_renderer(renderer), m_viewManager(viewManager)
+{
+}
 
 ViewBase::~ViewBase()
 {
-     close();
+    close();
 }
 
 void ViewBase::close()
@@ -19,9 +21,9 @@ void ViewBase::close()
     m_objects.clear();
 }
 
-void ViewBase::show()
+void ViewBase::show(CanvasData canvasData)
 {
     for (auto &object : m_objects)
-        object->render();
+        object->render(canvasData);
 }
 } // namespace tysm

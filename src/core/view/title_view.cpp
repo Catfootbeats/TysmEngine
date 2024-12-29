@@ -10,7 +10,7 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
     : ViewBase(renderer, viewManager)
 {
     titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 72);
-    m_objects.push_back(new Image{renderer, "res/tianyi.png"});
+    m_objects.push_back(new Image{renderer, "res/tianyi.png", {0, 0}, 1.0});
     m_objects.push_back(new Text{renderer, titleFont, "你好, tysm !!!!!"});
 }
 TitleView::~TitleView()

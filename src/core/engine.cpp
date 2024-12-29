@@ -32,7 +32,8 @@ Engine::Engine()
     windowInfo.can_resize = true;
     WindowManager::createWindow(mainWindow, windowInfo);
     RendererManager::initRenderer(renderer, mainWindow);
-    WindowManager::setWindowMinSize(mainWindow,800,600);
+    WindowManager::setWindowMinSize(mainWindow, 960, 540);
+    viewManager.setCanvas(windowInfo.width, windowInfo.height);
     viewManager.route(
         ViewManager::createView<TitleView>(renderer, viewManager));
 }
@@ -54,17 +55,15 @@ void Engine::run()
             if (e.type == SDL_QUIT)
                 isQuit = true;
             if (e.type == SDL_KEYDOWN)
-                if ((SDL_GetModState() & KMOD_ALT) && e.key.keysym.sym == SDLK_RETURN)
+                if ((SDL_GetModState() & KMOD_ALT) &&
+                    e.key.keysym.sym == SDLK_RETURN)
                     WindowManager::setWindowedOrFullDesktop(mainWindow);
             if (e.type == SDL_WINDOWEVENT) {
-                // if ((e.window.event == SDL_WINDOWEVENT_MAXIMIZED)) {
-                //     TY_CORE_INFO(WindowManager::getIsFullDesktop(mainWindow));
-                //     WindowManager::setWindowedOrFullDesktop(mainWindow);
-                // }
                 if (e.window.event == SDL_WINDOWEVENT_RESIZED) {
                     // 窗口大小改变时，重新设置渲染器的大小
                     SDL_RenderSetLogicalSize(renderer, e.window.data1,
                                              e.window.data2);
+                    viewManager.setCanvas(e.window.data1, e.window.data2);
                     //TODO: 重新设置窗口大小以符合画布比例
                 }
             }

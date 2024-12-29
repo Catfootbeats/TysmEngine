@@ -10,7 +10,7 @@ public:
     Image(SDL_Renderer *&renderer,
           const char *path,
           Position pos = {0, 0},
-          float size = 1.0);
+          float size = 0.5);
     ~Image() = default;
 };
 } // namespace tysm

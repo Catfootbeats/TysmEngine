@@ -12,6 +12,6 @@ public:
          const char *text,
          SDL_Color color = {0, 0, 0},
          Position pos = {0, 0},
-         float size = 1.0);
+         float size = 0.2);
 };
 } // namespace tysm

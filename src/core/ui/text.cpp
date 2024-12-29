@@ -15,7 +15,7 @@ Text::Text(SDL_Renderer *&renderer,
            SDL_Color color,
            Position pos,
            float size)
-    : TyObject(renderer)
+    : TyObject(renderer, pos, size)
 {
     SDL_Surface *surface = TTF_RenderUTF8_Blended(font, text, color);
     if (!surface) {
@@ -27,10 +27,7 @@ Text::Text(SDL_Renderer *&renderer,
         TY_CORE_ERROR("Create text texture failed", TTF_GetError());
         return;
     }
-    if (size != 0)
-        dstRect =
-            new SDL_Rect{pos.x, pos.y, static_cast<int>(surface->w * size),
-                         static_cast<int>(surface->h * size)};
+    aspectRatio = (float) surface->w / surface->h;
     SDL_FreeSurface(surface);
 }
 } // namespace tysm

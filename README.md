@@ -9,8 +9,11 @@ SDL2 galgame engine
 ```
 src
 ├── core
-│   ├── input //事件和输入
 │   └── render //渲染相关
+│   └── test   //测试页面
+│   └── ui     //ui相关
+│   └── utils  //工具
+│   └── view   //页面相关
 └── res //资源文件
 ```
 ## 如何构建

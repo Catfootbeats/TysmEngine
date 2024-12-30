@@ -4,6 +4,7 @@
 #include "view/view_manager.hpp"
 #include <SDL_events.h>
 #include <SDL_render.h>
+#include <thread>
 
 namespace tysm {
 class Engine {
@@ -19,6 +20,8 @@ private:
     SDL_Texture *texture{nullptr};
 
     ViewManager viewManager;
+
+    std::thread renderT;
 
     bool isQuit{false};
     int FRAMES_PER_SECOND{60};

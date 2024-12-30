@@ -23,6 +23,7 @@ void ViewManager::update(SDL_Event &event)
 
 void ViewManager::setCanvas(int w, int h)
 {
+    // 一个bug 不建议背景图片和画布比例不同
     if ((float) w / h == (float) canvasRatio.w / canvasRatio.h) {
         canvasData.w = w;
         canvasData.h = h;

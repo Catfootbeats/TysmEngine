@@ -5,13 +5,17 @@
 #include <SDL_ttf.h>
 
 namespace tysm {
+struct TextInfo {
+    SDL_Renderer *&renderer;
+    const char *name;
+    TTF_Font *font;
+    const char *text;
+    SDL_Color color = {0, 0, 0};
+    PositionScaler pos = {0, 0};
+    float size = 0.2;
+};
 class Text : public TyObject {
 public:
-    Text(SDL_Renderer *&renderer,
-         TTF_Font *font,
-         const char *text,
-         SDL_Color color = {0, 0, 0},
-         Position pos = {0, 0},
-         float size = 0.2);
+    Text(TextInfo);
 };
 } // namespace tysm

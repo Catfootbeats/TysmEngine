@@ -6,23 +6,16 @@
 #include <SDL_ttf.h>
 
 namespace tysm {
-/*
-如果size是0 则铺满屏幕（真的有人会把文字铺满屏幕吗）
-*/
-Text::Text(SDL_Renderer *&renderer,
-           TTF_Font *font,
-           const char *text,
-           SDL_Color color,
-           Position pos,
-           float size)
-    : TyObject(renderer, pos, size)
+Text::Text(TextInfo info)
+    : TyObject(info.renderer, info.name, info.pos, info.size)
 {
-    SDL_Surface *surface = TTF_RenderUTF8_Blended(font, text, color);
+    SDL_Surface *surface =
+        TTF_RenderUTF8_Blended(info.font, info.text, info.color);
     if (!surface) {
         TY_CORE_ERROR("Create text surface failed", SDL_GetError());
         return;
     }
-    texture = SDL_CreateTextureFromSurface(renderer, surface);
+    texture = SDL_CreateTextureFromSurface(info.renderer, surface);
     if (!texture) {
         TY_CORE_ERROR("Create text texture failed", TTF_GetError());
         return;

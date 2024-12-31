@@ -10,7 +10,8 @@ namespace tysm {
 TestView::TestView(SDL_Renderer *&renderer, ViewManager &viewManager)
     : ViewBase(renderer, viewManager)
 {
-    m_objects.push_back(new Image{renderer, "res/tianyi_1.png", {0, 0}, 1});
+    // m_objects.push_back(new Image(
+    //     {.renderer = renderer, .path = "res/tianyi_1.png", .size = 1}));
 }
 TestView::~TestView()
 {

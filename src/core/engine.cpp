@@ -24,6 +24,7 @@ int WindowEventFilter(void *userdata, SDL_Event *event)
     if (event->type == SDL_WINDOWEVENT) {
         if (event->window.event == SDL_WINDOWEVENT_RESIZED) {
             // 窗口大小改变时，重新设置渲染器的大小
+            //TODO: 一个bug 副屏resizing的时候内存会暴涨
             SDL_RenderSetLogicalSize(data->renderer, event->window.data1,
                                      event->window.data2);
             data->vm->setCanvas(event->window.data1, event->window.data2);
@@ -53,21 +54,19 @@ Engine::Engine()
     }
 
     // create window and renderer
-    TyWindowCreateInfo windowInfo;
-    windowInfo.can_resize = true;
-    WindowManager::createWindow(mainWindow, windowInfo);
+    WindowManager::createWindow(mainWindow, {.can_resize = true});
     RendererManager::initRenderer(renderer, mainWindow);
     WindowManager::setWindowMinSize(mainWindow, 960, 540);
 
-    viewManager.setCanvas(windowInfo.width, windowInfo.height);
+    int w, h;
+    WindowManager::getWindowSize(mainWindow, w, h);
+    viewManager.setCanvas(w, h);
     viewManager.route(
         ViewManager::createView<TitleView>(renderer, viewManager));
 }
 
 Engine::~Engine()
 {
-    if (renderT.joinable())
-        renderT.join();
     viewManager.quit();
     RendererManager::destroyRenderer(renderer);
     TTF_Quit();
@@ -78,7 +77,7 @@ Engine::~Engine()
 void Engine::run()
 {
     // 处理窗口resizing时保持渲染
-    WindowEventData data = WindowEventData{renderer, &viewManager};
+    auto data = WindowEventData{renderer, &viewManager};
     SDL_AddEventWatch(WindowEventFilter, &data);
     while (!isQuit) {
         // Event

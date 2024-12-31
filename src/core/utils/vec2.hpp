@@ -7,10 +7,16 @@ struct Vec2 {
 };
 
 // pos是一个长和宽的占比
-struct Position {
+struct PositionScaler {
     float xScaler;
     float yScaler;
 };
+
+struct SizeScaler {
+    float wScaler;
+    float hScaler;
+};
+
 struct Size {
     int w;
     int h;

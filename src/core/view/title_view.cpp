@@ -1,5 +1,4 @@
 #include "title_view.hpp"
-#include "test/test_view.hpp"
 #include "ui/image.hpp"
 #include "ui/text.hpp"
 #include "view/view_manager.hpp"
@@ -9,9 +8,20 @@ namespace tysm {
 TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
     : ViewBase(renderer, viewManager)
 {
-    titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 72);
-    m_objects.push_back(new Image{renderer, "res/tianyi.png", {0, 0}, 1.0});
-    m_objects.push_back(new Text{renderer, titleFont, "你好, tysm !!!!!"});
+    titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 144);
+    object({
+        new Image({.renderer = renderer,
+                   .name = "bg",
+                   .path = "res/tianyi.png",
+                   .size = 1.0}),
+        new Text({.renderer = renderer,
+                  .name = "title",
+                  .font = titleFont,
+                  .text = "你好, tysm !!!!!",
+                  .pos = {0.1, 0.3},
+                  .size = 0.5}),
+        //         new Button({.renderer = renderer})
+    });
 }
 TitleView::~TitleView()
 {
@@ -22,9 +32,15 @@ TitleView::~TitleView()
 void TitleView::update(SDL_Event &event)
 {
     if (event.type == SDL_KEYDOWN)
-        if (event.key.keysym.sym == SDLK_SPACE)
-            m_viewManager.route(
-                ViewManager::createView<TestView>(m_renderer, m_viewManager));
+        if (event.key.keysym.sym == SDLK_SPACE) {
+            removeObjectByName("title");
+            addObject(new Text({.renderer = m_renderer,
+                  .name = "title1",
+                  .font = titleFont,
+                  .text = "你好, tysm !!!!!",
+                  .pos = {0.6, 0.3},
+                  .size = 0.5}));
+        }
 }
 
 } // namespace tysm

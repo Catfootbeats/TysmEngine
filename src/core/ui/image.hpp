@@ -5,12 +5,16 @@
 #include <SDL_render.h>
 
 namespace tysm {
+struct ImageInfo {
+    SDL_Renderer *&renderer;
+    const char *name;
+    const char *path;
+    PositionScaler pos = {0, 0};
+    float size = 0.5;
+};
 class Image : public TyObject {
 public:
-    Image(SDL_Renderer *&renderer,
-          const char *path,
-          Position pos = {0, 0},
-          float size = 0.5);
+    Image(ImageInfo);
     ~Image() = default;
 };
 } // namespace tysm

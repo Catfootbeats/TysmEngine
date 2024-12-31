@@ -10,7 +10,7 @@ class TestView final : public ViewBase {
 public:
     explicit TestView(SDL_Renderer *&renderer, ViewManager &viewManager);
     ~TestView() override;
-    void update(SDL_Event &) override;
+    void update(SDL_Event &, CanvasData &canvasData) override;
 };
 
 } // namespace tysm

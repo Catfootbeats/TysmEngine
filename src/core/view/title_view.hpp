@@ -1,4 +1,5 @@
 #pragma once
+#include "utils/canvas_data.hpp"
 #include "view_base.hpp"
 #include "view_manager.hpp"
 
@@ -10,9 +11,10 @@ class TitleView final : public ViewBase {
 public:
     explicit TitleView(SDL_Renderer *&renderer, ViewManager &viewManager);
     ~TitleView() override;
-    void update(SDL_Event& event) override;
+    void update(SDL_Event &event, CanvasData &canvasData) override;
+
 private:
-    TTF_Font* titleFont;
+    TTF_Font *titleFont;
 };
 
 } // namespace tysm

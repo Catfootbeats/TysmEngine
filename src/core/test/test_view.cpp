@@ -1,6 +1,5 @@
 #include "test_view.hpp"
 
-#include "ui/image.hpp"
 #include "view/title_view.hpp"
 #include "view/view_manager.hpp"
 #include <SDL_ttf.h>
@@ -18,7 +17,7 @@ TestView::~TestView()
     close();
 }
 
-void TestView::update(SDL_Event &event)
+void TestView::update(SDL_Event &event, CanvasData &canvasData)
 {
     if (event.type == SDL_KEYDOWN)
         if (event.key.keysym.sym == SDLK_SPACE)

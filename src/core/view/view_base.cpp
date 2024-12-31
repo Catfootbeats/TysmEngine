@@ -48,6 +48,13 @@ void ViewBase::addObject(TyObject *object)
     nameMap[object->name] = m_objects.size() - 1;
 }
 
+void ViewBase::updateObject(SDL_Event &e, CanvasData &canvasData)
+{
+    for (auto object : m_objects) {
+        object->update(e, canvasData);
+    }
+}
+
 void ViewBase::close()
 {
     for (int i = 0; i < m_objects.size(); ++i) {
@@ -56,7 +63,7 @@ void ViewBase::close()
     m_objects.clear();
 }
 
-void ViewBase::show(CanvasData canvasData)
+void ViewBase::show(CanvasData &canvasData)
 {
     for (auto &object : m_objects)
         object->render(canvasData);

@@ -6,7 +6,7 @@ namespace tysm {
 class IView {
 public:
     virtual ~IView() = default;
-    virtual void show(CanvasData) = 0;
-    virtual void update(SDL_Event &) = 0;
+    virtual void show(CanvasData &) = 0;
+    virtual void update(SDL_Event &, CanvasData &) = 0;
 };
 } // namespace tysm

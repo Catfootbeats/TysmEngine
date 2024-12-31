@@ -14,7 +14,7 @@ public:
     ViewBase(SDL_Renderer *&renderer, ViewManager &viewManager);
     ~ViewBase() override;
     void close();
-    void show(CanvasData canvasData) final;
+    void show(CanvasData &canvasData) final;
 
 protected:
     SDL_Renderer *&m_renderer;
@@ -23,6 +23,7 @@ protected:
     TyObject *findObjectByName(const char *name);
     void removeObjectByName(const char *name);
     void addObject(TyObject *object);
+    void updateObject(SDL_Event &e, CanvasData &canvasData);
 
 private:
     // 维护一个名称和下标的键值对用来查找对象

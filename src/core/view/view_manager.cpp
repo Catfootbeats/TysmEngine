@@ -18,7 +18,7 @@ void ViewManager::update(SDL_Event &event)
         TY_CORE_WARN("Undefined View");
         return;
     }
-    currentView->update(event);
+    currentView->update(event, canvasData);
 }
 
 void ViewManager::setCanvas(int w, int h)

@@ -2,7 +2,9 @@
 
 #include "utils/canvas_data.hpp"
 #include "utils/vec2.hpp"
+#include <SDL_events.h>
 #include <SDL_render.h>
+#include <functional>
 
 namespace tysm {
 class TyObject {
@@ -18,7 +20,9 @@ public:
                       PositionScaler pos,
                       SizeScaler sizeScaler);
     ~TyObject();
-    void render(CanvasData canvasData);
+    virtual void update(SDL_Event &e, CanvasData &canvasData) {}
+    virtual void render(CanvasData &canvasData);
+    virtual void bindOnClick(std::function<void()> func) {}
     const char *name;
 
 private:

@@ -23,12 +23,11 @@ public:
     virtual void update(SDL_Event &e, CanvasData &canvasData) {}
     virtual void render(CanvasData &canvasData);
     virtual void bindOnClick(std::function<void()> func) {}
+    virtual void bindOnFloat(std::function<void()> func) {}
     const char *name;
 
-private:
-    SDL_Renderer *&renderer;
-
 protected:
+    SDL_Renderer *&renderer;
     // UI组件必须赋值 w/h
     float aspectRatio;
     PositionScaler pos{0, 0};

@@ -2,7 +2,6 @@
 
 #include "log.hpp"
 #include "view/view_manager.hpp"
-#include <vadefs.h>
 
 namespace tysm {
 ViewBase::ViewBase(SDL_Renderer *&renderer, ViewManager &viewManager)

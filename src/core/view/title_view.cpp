@@ -23,11 +23,12 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
                       .text = "你好, tysm !!!!!",
                       .pos = {0.1, 0.3},
                       .size = 0.5}),
-            new Button({
-                .renderer = renderer,
-                .name = "mybutton",
-                .text = "我是一个按钮哼哼哼啊啊啊啊啊啊",
-            })});
+            new Button({.renderer = renderer,
+                        .name = "mybutton",
+                        .text = "我是一个按钮哼哼哼啊啊啊啊啊啊",
+                        .font = titleFont,
+                        .bgColor = {255, 255, 255, 255},
+                        .borderColor = {0, 0, 0, 255}})});
     findObjectByName("mybutton")->bindOnClick([this] {
         TY_CORE_INFO("哼哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊");
     });

@@ -9,8 +9,8 @@ struct ImageInfo {
     SDL_Renderer *&renderer;
     const char *name;
     const char *path;
-    PositionScaler pos = {0, 0};
-    float size = 0.5;
+    Position pos = {0, 0};
+    float size = 1;
 };
 class Image : public TyObject {
 public:

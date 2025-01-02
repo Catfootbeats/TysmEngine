@@ -1,7 +1,7 @@
 #pragma once
 
-#include "utils/canvas_data.hpp"
 #include "utils/vec2.hpp"
+#include "config.hpp"
 #include <SDL_events.h>
 #include <SDL_render.h>
 #include <functional>
@@ -9,30 +9,27 @@
 namespace tysm {
 class TyObject {
 public:
-    //有固定宽高比的元素
+    //有固定宽高比的元素 图片文字
     explicit TyObject(SDL_Renderer *&renderer,
                       const char *name,
-                      PositionScaler pos,
-                      float size);
-    //有固定长宽的元素
+                      Position pos,
+                      float scale = 1.0);
+    //有固定长宽的元素 按钮 列表
     explicit TyObject(SDL_Renderer *&renderer,
                       const char *name,
-                      PositionScaler pos,
-                      SizeScaler sizeScaler);
-    ~TyObject();
-    virtual void update(SDL_Event &e, CanvasData &canvasData) {}
-    virtual void render(CanvasData &canvasData);
+                      Position pos,
+                      Size size);
+    virtual ~TyObject();
+    virtual void update(SDL_Event &e, SDL_Rect &canvasData) {}
+    virtual void draw(SDL_Texture *canvas);
     virtual void bindOnClick(std::function<void()> func) {}
     virtual void bindOnFloat(std::function<void()> func) {}
     const char *name;
-
+    Position pos{0, 0};
+    Size size{0,0};
+    float scale{1.0};
 protected:
     SDL_Renderer *&renderer;
-    // UI组件必须赋值 w/h
-    float aspectRatio;
-    PositionScaler pos{0, 0};
-    SizeScaler sizeScaler{0, 0};
-    float size{0};
     SDL_Rect *dstRect{nullptr};
     SDL_Texture *texture{nullptr};
 };

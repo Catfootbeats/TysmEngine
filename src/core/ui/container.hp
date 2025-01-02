@@ -15,7 +15,7 @@ public:
     // render在渲染时通过改变输入的Canvas Data的值来渲染相应的对象
 
 protected:
-    CanvasData containerData;
+    SDL_Rect containerData;
     std::vector<TyObject *> children;
 };
 } // namespace tysm

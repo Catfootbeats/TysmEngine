@@ -11,8 +11,8 @@ namespace tysm {
 struct ButtonInfo {
     SDL_Renderer *&renderer;
     const char *name;
-    PositionScaler pos = {0.5, 0.5};
-    SizeScaler sizeScaler = {0.1, 0.1};
+    Position pos = {0, 0};
+    Size size = {50, 25};
     const char *text = nullptr;
     TTF_Font *font = nullptr;
     SDL_Color fontColor = {0, 0, 0, 255};
@@ -34,8 +34,7 @@ public:
     void bindOnClick(std::function<void()> func) override;
     void bindOnFloat(std::function<void()> func) override;
 
-    void update(SDL_Event &e, CanvasData &canvasData) override;
-    void render(CanvasData &canvasData) override;
+    void update(SDL_Event &e, SDL_Rect &canvasData) override;
 
 private:
     int x, y, w, h;
@@ -45,8 +44,8 @@ private:
 
     std::function<void()> onClickFunc;
     std::function<void()> onFloatFunc;
-    bool isFloat(SDL_Event &e, CanvasData &canvasData);
-    bool isClick(SDL_Event &e, CanvasData &canvasData);
+    bool isFloat(SDL_Event &e, SDL_Rect &canvasData);
+    bool isClick(SDL_Event &e, SDL_Rect &canvasData);
     // 不支持重新设置字体
     void initTextTexture();
     void initImgTexture();

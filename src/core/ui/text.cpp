@@ -6,7 +6,7 @@
 #include <SDL_ttf.h>
 
 namespace tysm {
-Text::Text(TextInfo info)
+Text::Text(const TextInfo &info)
     : TyObject(info.renderer, info.name, info.pos, info.size)
 {
     SDL_Surface *surface =
@@ -20,7 +20,8 @@ Text::Text(TextInfo info)
         TY_CORE_ERROR("Create text texture failed", TTF_GetError());
         return;
     }
-    aspectRatio = (float) surface->w / surface->h;
+    size.w = surface->w;
+    size.h = surface->h;
     SDL_FreeSurface(surface);
 }
 } // namespace tysm

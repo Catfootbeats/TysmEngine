@@ -47,7 +47,7 @@ void ViewBase::addObject(TyObject *object)
     nameMap[object->name] = m_objects.size() - 1;
 }
 
-void ViewBase::updateObject(SDL_Event &e, CanvasData &canvasData)
+void ViewBase::updateObject(SDL_Event &e, SDL_Rect &canvasData)
 {
     for (auto object : m_objects) {
         object->update(e, canvasData);
@@ -62,9 +62,9 @@ void ViewBase::close()
     m_objects.clear();
 }
 
-void ViewBase::show(CanvasData &canvasData)
+void ViewBase::draw(SDL_Texture* canvas)
 {
     for (auto &object : m_objects)
-        object->render(canvasData);
+        object->draw(canvas);
 }
 } // namespace tysm

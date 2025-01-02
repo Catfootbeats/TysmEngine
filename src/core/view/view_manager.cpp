@@ -3,7 +3,20 @@
 #include "log.hpp"
 
 namespace tysm {
-ViewManager::ViewManager(Size canvasRatio) : canvasRatio(canvasRatio) {}
+ViewManager::ViewManager(Size canvasSize, SDL_Renderer *&renderer)
+    : canvasSize(canvasSize), renderer(renderer)
+{
+    canvas =
+        SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888,
+                          SDL_TEXTUREACCESS_TARGET | SDL_TEXTUREACCESS_STATIC,
+                          canvasSize.w, canvasSize.h);
+}
+
+ViewManager::~ViewManager()
+{
+    currentView.reset();
+}
+
 
 void ViewManager::route(std::unique_ptr<IView> view)
 {
@@ -18,51 +31,52 @@ void ViewManager::update(SDL_Event &event)
         TY_CORE_WARN("Undefined View");
         return;
     }
-    currentView->update(event, canvasData);
+    currentView->update(event, canvasRect);
 }
 
+//计算画布要在屏幕上渲染的位置
+//通过传入的窗口大小
 void ViewManager::setCanvas(int w, int h)
 {
-    // 一个bug 不建议背景图片和画布比例不同
-    if ((float) w / h == (float) canvasRatio.w / canvasRatio.h) {
-        canvasData.w = w;
-        canvasData.h = h;
-        canvasData.xOffset = 0;
-        canvasData.yOffset = 0;
+    if ((float) w / h == (float) canvasSize.w / canvasSize.h) {
+        canvasRect.w = w;
+        canvasRect.h = h;
+        canvasRect.x = 0;
+        canvasRect.y = 0;
         return;
     }
 
-    if ((float) w / h > (float) canvasRatio.w / canvasRatio.h) {
-        canvasData.h = h;
-        canvasData.w =
-            static_cast<int>(h * ((float) canvasRatio.w / canvasRatio.h));
-        canvasData.xOffset = static_cast<int>(w - canvasData.w) / 2;
-        canvasData.yOffset = 0;
+    if ((float) w / h > (float) canvasSize.w / canvasSize.h) {
+        canvasRect.h = h;
+        canvasRect.w =
+            static_cast<int>(h * ((float) canvasSize.w / canvasSize.h));
+        canvasRect.x = static_cast<int>(w - canvasRect.w) / 2;
+        canvasRect.y = 0;
         return;
     }
 
-    if ((float) w / h < (float) canvasRatio.w / canvasRatio.h) {
-        canvasData.w = w;
-        canvasData.h =
-            static_cast<int>(w * ((float) canvasRatio.h / canvasRatio.w));
-        canvasData.xOffset = 0;
-        canvasData.yOffset = static_cast<int>(h - canvasData.h) / 2;
+    if ((float) w / h < (float) canvasSize.w / canvasSize.h) {
+        canvasRect.w = w;
+        canvasRect.h =
+            static_cast<int>(w * ((float) canvasSize.h / canvasSize.w));
+        canvasRect.x = 0;
+        canvasRect.y = static_cast<int>(h - canvasRect.h) / 2;
         return;
     }
 }
 
-void ViewManager::show()
+// 把图形绘制到画布上
+void ViewManager::draw()
 {
     if (currentView == nullptr) {
         TY_CORE_ERROR("Undefined View");
         return;
     }
-    currentView->show(canvasData);
+    SDL_SetRenderTarget(renderer,canvas);
+    currentView->draw(canvas);
+    SDL_SetRenderTarget(renderer,nullptr);
+    SDL_RenderCopy(renderer,canvas,nullptr,&canvasRect);
+    // step1 在canvas上面绘画
+    // step2 将canvas上的内容呈现出来
 }
-
-void ViewManager::quit()
-{
-    currentView.reset();
-}
-
 } // namespace tysm

@@ -18,7 +18,7 @@ private:
     SDL_Renderer *renderer{nullptr};
     SDL_Texture *texture{nullptr};
 
-    ViewManager viewManager;
+    std::unique_ptr<ViewManager> viewManager{nullptr};
 
     bool isQuit{false};
     int FRAMES_PER_SECOND{60};

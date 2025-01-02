@@ -5,7 +5,7 @@
 
 namespace tysm {
 Button::Button(ButtonInfo info)
-    : TyObject(info.renderer, info.name, info.pos, info.sizeScaler)
+    : TyObject(info.renderer, info.name, info.pos, info.size)
     , text(info.text)
     , imgPath(info.imgPath)
     , bgColor(info.bgColor)
@@ -53,7 +53,7 @@ void Button::bindOnFloat(std::function<void()> func)
     onFloatFunc = func;
 }
 
-void Button::update(SDL_Event &e, CanvasData &canvasData)
+void Button::update(SDL_Event &e, SDL_Rect &canvasData)
 {
     if (text != nullptr)
         initTextTexture();
@@ -63,30 +63,13 @@ void Button::update(SDL_Event &e, CanvasData &canvasData)
         onClickFunc();
 }
 
-void Button::render(CanvasData &canvasData)
+bool Button::isFloat(SDL_Event &e, SDL_Rect &canvas) {
+    //TODO:
+    return 0;}
+
+bool Button::isClick(SDL_Event &e, SDL_Rect &canvas)
 {
-    // update rect
-    x = static_cast<int>(canvasData.w * pos.xScaler + canvasData.xOffset);
-    y = static_cast<int>(canvasData.h * pos.yScaler + canvasData.yOffset);
-    w = static_cast<int>(canvasData.w * sizeScaler.wScaler);
-    h = static_cast<int>(canvasData.h * sizeScaler.hScaler);
-    if (!dstRect)
-        delete dstRect;
-    dstRect = new SDL_Rect{x, y, w, h};
-
-    //draw bg color
-    SDL_SetRenderDrawColor(renderer, bgColor.r, bgColor.g, bgColor.b,
-                           bgColor.a);
-    SDL_RenderFillRect(renderer, dstRect);
-    SDL_SetRenderDrawColor(renderer, borderColor.r, borderColor.g,
-                           borderColor.b, borderColor.a);
-    SDL_RenderDrawRect(renderer, dstRect);
-}
-
-bool Button::isFloat(SDL_Event &e, CanvasData &canvasData) {}
-
-bool Button::isClick(SDL_Event &e, CanvasData &canvasData)
-{
+    //TODO:
     return 1;
 }
 } // namespace tysm

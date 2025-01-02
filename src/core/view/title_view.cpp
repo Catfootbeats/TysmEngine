@@ -16,13 +16,12 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
     object({new Image({.renderer = renderer,
                        .name = "bg",
                        .path = "res/tianyi.png",
-                       .size = 1.0}),
+                        .size=-1}),
             new Text({.renderer = renderer,
                       .name = "title",
                       .font = titleFont,
                       .text = "你好, tysm !!!!!",
-                      .pos = {0.1, 0.3},
-                      .size = 0.5}),
+                      .pos = {30, 100}}),
             new Button({.renderer = renderer,
                         .name = "mybutton",
                         .text = "我是一个按钮哼哼哼啊啊啊啊啊啊",
@@ -30,7 +29,6 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
                         .bgColor = {255, 255, 255, 255},
                         .borderColor = {0, 0, 0, 255}})});
     findObjectByName("mybutton")->bindOnClick([this] {
-        TY_CORE_INFO("哼哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊");
     });
 }
 TitleView::~TitleView()
@@ -39,20 +37,13 @@ TitleView::~TitleView()
     close();
 }
 
-void TitleView::update(SDL_Event &event, CanvasData &canvasData)
+void TitleView::update(SDL_Event &event, SDL_Rect &canvasData)
 {
     updateObject(event, canvasData);
 
     // user
     if (event.type == SDL_KEYDOWN)
         if (event.key.keysym.sym == SDLK_SPACE) {
-            removeObjectByName("title");
-            addObject(new Text({.renderer = m_renderer,
-                                .name = "title1",
-                                .font = titleFont,
-                                .text = "你好, tysm !!!!!",
-                                .pos = {0.6, 0.3},
-                                .size = 0.5}));
         }
 }
 

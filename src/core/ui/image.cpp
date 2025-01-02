@@ -14,7 +14,8 @@ Image::Image(ImageInfo info)
         return;
     }
     int width, height;
-    SDL_QueryTexture(texture, NULL, NULL, &width, &height);
-    aspectRatio = (float) width / height;
+    SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
+    size.w = width;
+    size.h = height;
 }
 } // namespace tysm

@@ -17,7 +17,9 @@ TestView::~TestView()
     close();
 }
 
-void TestView::update(SDL_Event &event, SDL_Rect &canvasData)
+void TestView::update(SDL_Event &event,
+                      SDL_Rect &canvasData,
+                      SDL_Window *&window)
 {
     if (event.type == SDL_KEYDOWN)
         if (event.key.keysym.sym == SDLK_SPACE)

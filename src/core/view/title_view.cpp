@@ -12,38 +12,42 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
     : ViewBase(renderer, viewManager)
 {
     // user
-    titleFont = TTF_OpenFont("res/fonts/SourceHanSansCN-Bold.otf", 144);
+    // ui部分的编写
     object({new Image({.renderer = renderer,
                        .name = "bg",
                        .path = "res/tianyi.png",
-                        .size=-1}),
+                       .size = -1}),
+
             new Text({.renderer = renderer,
                       .name = "title",
-                      .font = titleFont,
+                      .fontPath = "res/fonts/SourceHanSansCN-Bold.otf",
                       .text = "你好, tysm !!!!!",
                       .pos = {30, 100}}),
+
             new Button({.renderer = renderer,
-                        .name = "mybutton",
-                        .text = "我是一个按钮哼哼哼啊啊啊啊啊啊",
-                        .font = titleFont,
-                        .bgColor = {255, 255, 255, 255},
+                        .name = "myButton",
+                        .size = {1000, 250},
+                        .text = "我是一个按钮",
+                        .fontPath = "res/fonts/SourceHanSansCN-Bold.otf",
+                        .imgPath = "res/homo.png",
                         .borderColor = {0, 0, 0, 255}})});
-    findObjectByName("mybutton")->bindOnClick([this] {
+
+    findObjectByName("myButton")->bindOnFloat([this] {
+        TY_CORE_INFO("哼哼哼啊啊啊啊");
     });
 }
-TitleView::~TitleView()
-{
-    TTF_CloseFont(titleFont);
-    close();
-}
 
-void TitleView::update(SDL_Event &event, SDL_Rect &canvasData)
+void TitleView::update(SDL_Event &event,
+                       SDL_Rect &canvasRect,SDL_Window*&window)
 {
-    updateObject(event, canvasData);
+    updateObject(event, canvasRect,window);
 
     // user
+    // 整个页面的事件处理
     if (event.type == SDL_KEYDOWN)
         if (event.key.keysym.sym == SDLK_SPACE) {
+            findObjectByName("bg")->setImage("res/yuzu.png");
+            findObjectByName("title")->setText("Ciallo～(∠・ω<)⌒☆");
         }
 }
 

@@ -1,3 +1,7 @@
 #pragma once
 
 #define UI_SCALE 2
+#define CANVAS_WIDTH 3840
+#define CANVAS_HEIGHT 2160
+#define WINDOW_WIDTH 1280
+#define WINDOW_HEIGHT 720

@@ -20,7 +20,7 @@ public:
         return std::make_unique<T>(renderer, viewManager);
     }
     void route(std::unique_ptr<IView> view);
-    void update(SDL_Event &event);
+    void update(SDL_Event &event, SDL_Window*&window);
 
     // 传入window宽高并计算画布rect
     void setCanvas(int w, int h);

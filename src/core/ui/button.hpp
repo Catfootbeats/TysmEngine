@@ -10,44 +10,47 @@ namespace tysm {
 
 struct ButtonInfo {
     SDL_Renderer *&renderer;
-    const char *name;
-    Position pos = {0, 0};
-    Size size = {50, 25};
-    const char *text = nullptr;
-    TTF_Font *font = nullptr;
-    SDL_Color fontColor = {0, 0, 0, 255};
-    const char *imgPath = nullptr;
-    SDL_Color bgColor = {255, 255, 255, 0};
-    SDL_Color borderColor = {255, 255, 255, 0};
-};
-class Button : public TyObject {
-public:
-    Button(ButtonInfo);
-    ~Button() = default;
+    const char *name{nullptr};
+    Position pos = {500, 700};
+    Size size = {500, 250};
 
-    const char *text;
-    const char *imgPath;
-    SDL_Color fontColor;
-    SDL_Color bgColor;
-    SDL_Color borderColor;
+    const char *text = nullptr;
+    const char *fontPath = nullptr;
+    int fontSize = 72;
+    SDL_Color fontColor = {0, 0, 0, 255};
+
+    const char *imgPath = nullptr;
+    SDL_Color bgColor = {102, 204, 255,255};
+
+    SDL_Color borderColor = {255, 255, 255, 0};
+    int borderWidth = 3;
+};
+class Button final : public TyObject {
+public:
+    explicit Button(ButtonInfo);
+    ~Button() override;
 
     void bindOnClick(std::function<void()> func) override;
     void bindOnFloat(std::function<void()> func) override;
 
-    void update(SDL_Event &e, SDL_Rect &canvasData) override;
+    void update(SDL_Event &e, SDL_Rect &canvasData, SDL_Window *&window) override;
+    void draw(SDL_Texture *canvas) override;
 
 private:
-    int x, y, w, h;
-    TTF_Font *font;
+    TTF_Font *font_{nullptr};
     SDL_Texture *bgTexture{nullptr};
     SDL_Texture *textTexture{nullptr};
 
+    ButtonInfo info_;
+    ButtonInfo infoCopy;
+    bool isOnFloat = false;
+    SDL_Rect *textRect{nullptr};
+
     std::function<void()> onClickFunc;
     std::function<void()> onFloatFunc;
-    bool isFloat(SDL_Event &e, SDL_Rect &canvasData);
-    bool isClick(SDL_Event &e, SDL_Rect &canvasData);
-    // 不支持重新设置字体
-    void initTextTexture();
-    void initImgTexture();
+    bool chechIsFloat(SDL_Event &e, SDL_Rect &canvasRect, SDL_Window *&window);
+    bool chechIsClick(SDL_Event &e, SDL_Rect &canvasRect, SDL_Window *&window);
+    void createTextTexture(const ButtonInfo &info);
+    void createImageTexture(const ButtonInfo &info);
 };
 } // namespace tysm

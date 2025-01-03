@@ -25,13 +25,13 @@ void ViewManager::route(std::unique_ptr<IView> view)
     TY_CORE_INFO("Route view success");
 }
 
-void ViewManager::update(SDL_Event &event)
+void ViewManager::update(SDL_Event &event, SDL_Window *&window)
 {
     if (currentView == nullptr) {
         TY_CORE_WARN("Undefined View");
         return;
     }
-    currentView->update(event, canvasRect);
+    currentView->update(event, canvasRect, window);
 }
 
 //计算画布要在屏幕上渲染的位置
@@ -73,6 +73,7 @@ void ViewManager::draw()
         return;
     }
     SDL_SetRenderTarget(renderer,canvas);
+    SDL_RenderClear(renderer);
     currentView->draw(canvas);
     SDL_SetRenderTarget(renderer,nullptr);
     SDL_RenderCopy(renderer,canvas,nullptr,&canvasRect);

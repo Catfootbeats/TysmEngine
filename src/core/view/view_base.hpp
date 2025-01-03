@@ -19,11 +19,11 @@ public:
 protected:
     SDL_Renderer *&m_renderer;
     ViewManager &m_viewManager;
-    void object(std::vector<TyObject *>);
+    void object(const std::vector<TyObject *> &);
     TyObject *findObjectByName(const char *name);
     void removeObjectByName(const char *name);
     void addObject(TyObject *object);
-    void updateObject(SDL_Event &e, SDL_Rect &canvasData);
+    void updateObject(SDL_Event &e, SDL_Rect &canvasData, SDL_Window *&window);
 
 private:
     // 维护一个名称和下标的键值对用来查找对象

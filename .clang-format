@@ -3,6 +3,7 @@ IndentWidth: 4
 TabWidth: 4
 AlwaysBreakTemplateDeclarations: true
 AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: None
 BreakAfterJavaFieldAnnotations: true
 SpaceAfterCStyleCast: true
 IndentCaseLabels: true

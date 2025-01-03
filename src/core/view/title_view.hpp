@@ -9,11 +9,9 @@ namespace tysm {
 class TitleView final : public ViewBase {
 public:
     explicit TitleView(SDL_Renderer *&renderer, ViewManager &viewManager);
-    ~TitleView() override;
-    void update(SDL_Event &event, SDL_Rect &canvasData) override;
-
-private:
-    TTF_Font *titleFont;
+    void update(SDL_Event &event,
+                SDL_Rect &canvasRect,
+                SDL_Window *&window) override;
 };
 
 } // namespace tysm

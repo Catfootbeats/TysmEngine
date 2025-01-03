@@ -5,6 +5,7 @@
 #include <SDL_ttf.h>
 #include <SDL_video.h>
 
+#include "config.hpp"
 #include "engine.hpp"
 #include "log.hpp"
 #include "render/renderer_manager.hpp"
@@ -43,26 +44,36 @@ Engine::Engine()
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         SDL_Quit();
-        TY_CORE_ERROR("Error initializing SDL:", SDL_GetError());
+        TY_CORE_ERROR("Error initializing SDL: {}", SDL_GetError());
+        return;
+    }
+
+    if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) < 0) {
+        SDL_Quit();
+        TY_CORE_ERROR("Error initializing IMG: {}", IMG_GetError());
         return;
     }
 
     if (TTF_Init() < 0) {
+        IMG_Quit();
         SDL_Quit();
-        TY_CORE_ERROR("Error initializing TTF:", TTF_GetError());
+        TY_CORE_ERROR("Error initializing TTF: {}", TTF_GetError());
         return;
     }
 
     // create window and renderer
-    WindowManager::createWindow(mainWindow, {.can_resize = true});
+    WindowManager::createWindow(
+        mainWindow,
+        {.width = WINDOW_WIDTH, .height = WINDOW_HEIGHT, .can_resize = true});
     RendererManager::initRenderer(renderer, mainWindow);
     WindowManager::setWindowMinSize(mainWindow, 960, 540);
 
-    Size size{3840,2160};
-    viewManager = std::make_unique<ViewManager>(size,renderer);//初始化传入画布大小，高分辨率渲染，拉伸回低分辨率
-    int w,h;
-    WindowManager::getWindowSize(mainWindow,w,h);
-    viewManager->setCanvas(w,h);
+    Size size{CANVAS_WIDTH, CANVAS_HEIGHT};
+    viewManager = std::make_unique<ViewManager>(
+        size, renderer); //初始化传入画布大小，高分辨率渲染，拉伸回低分辨率
+    int w, h;
+    WindowManager::getWindowSize(mainWindow, w, h);
+    viewManager->setCanvas(w, h);
     viewManager->route(
         ViewManager::createView<TitleView>(renderer, *viewManager));
 }
@@ -71,6 +82,7 @@ Engine::~Engine()
 {
     RendererManager::destroyRenderer(renderer);
     TTF_Quit();
+    IMG_Quit();
     SDL_Quit();
     TY_CORE_INFO("Tysm closed");
 }
@@ -96,7 +108,8 @@ void Engine::run()
                 default:
                     break;
             }
-            viewManager->update(e);
+            SDL_GetWindowID(mainWindow);
+            viewManager->update(e, mainWindow);
         }
         // Render
         SDL_RenderClear(renderer);

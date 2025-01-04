@@ -4,6 +4,8 @@
 #include <SDL_render.h>
 #include <SDL_ttf.h>
 #include <SDL_video.h>
+#include <SDL_mixer.h>
+#include "audio/audio.cpp"
 
 #include "config.hpp"
 #include "engine.hpp"
@@ -61,6 +63,15 @@ Engine::Engine()
         return;
     }
 
+    if (Mix_Init(MIX_INIT_MP3|MIX_INIT_OGG|MIX_INIT_FLAC) < 0) {
+        TTF_Quit();
+        IMG_Quit();
+        SDL_Quit();
+        TY_CORE_ERROR("Error initializing Mix: {}", Mix_GetError());
+        return;
+    }
+    Mix_OpenAudio(MIX_DEFAULT_FREQUENCY,MIX_DEFAULT_FORMAT,MIX_DEFAULT_CHANNELS,4096);
+
     // create window and renderer
     WindowManager::createWindow(
         mainWindow,
@@ -81,6 +92,7 @@ Engine::Engine()
 Engine::~Engine()
 {
     RendererManager::destroyRenderer(renderer);
+    Mix_Quit();
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();

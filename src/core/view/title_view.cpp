@@ -1,5 +1,5 @@
 #include "title_view.hpp"
-
+#include "audio/audio.cpp"
 #include "log.hpp"
 #include "ui/button.hpp"
 #include "ui/image.hpp"
@@ -27,13 +27,16 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
             new Button({.renderer = renderer,
                         .name = "myButton",
                         .size = {1000, 250},
-                        .text = "我是一个按钮",
+                        .text = "播放",
                         .fontPath = "res/fonts/SourceHanSansCN-Bold.otf",
-                        .imgPath = "res/homo.png",
                         .borderColor = {0, 0, 0, 255}})});
 
+    findObjectByName("myButton")->bindOnLeftClick([this] {
+        TY_CORE_INFO("播放");
+        audio("res/audio/洛天依 - 夏虫.wav");
+    });
     findObjectByName("myButton")->bindOnFloat([this] {
-        TY_CORE_INFO("哼哼哼啊啊啊啊");
+        findObjectByName("myButton")->setBgColor({255,255,255,255});
     });
 }
 

@@ -1,6 +1,6 @@
 #include "core/engine.hpp"
-#include <memory>
 #include <SDL.h>
+#include <memory>
 
 int main(int argc, char *args[])
 {

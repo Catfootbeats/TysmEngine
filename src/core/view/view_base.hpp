@@ -8,6 +8,8 @@
 #include "view/iview.hpp"
 #include "view/view_manager.hpp"
 
+#include <SDL_mixer.h>
+
 namespace tysm {
 class ViewBase : public IView {
 public:

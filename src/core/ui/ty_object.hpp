@@ -23,12 +23,17 @@ public:
     virtual void draw(SDL_Texture *canvas);
 
     // 只有特定重写了的组件才能触发
-    virtual void bindOnClick(std::function<void()> func) {}
+    // 绑定左键点击事件 触发一次
+    virtual void bindOnLeftClick(std::function<void()> func) {}
+    // 绑定右键点击事件 触发一次
+    virtual void bindOnRightClick(std::function<void()> func) {}
     virtual void bindOnFloat(std::function<void()> func) {}
     virtual void setText(const char *text) {}
     virtual void setFont(const char *fontPath) {}
     virtual void setFontSize(int fontSize) {}
     virtual void setImage(const char *path) {}
+    virtual void setBgColor(SDL_Color color){}
+    virtual void setBorder(SDL_Color borderColor,int width){}
 
     const char *name;
     Position pos{0, 0};

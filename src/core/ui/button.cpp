@@ -10,7 +10,7 @@ namespace tysm {
 Button::Button(ButtonInfo info)
     : TyObject(info.renderer, info.name, info.pos, info.size)
     , info_(info)
-    , infoCopy(info)
+    , infoCopy_(info)
 {
     createImageTexture(info_);
     createTextTexture(info_);
@@ -84,9 +84,14 @@ void Button::createImageTexture(const ButtonInfo &info)
                       IMG_GetError());
 }
 
-void Button::bindOnClick(std::function<void()> func)
+void Button::bindOnLeftClick(std::function<void()> func)
 {
-    onClickFunc = func;
+    onLeftClickFunc = func;
+}
+
+void Button::bindOnRightClick(std::function<void()> func)
+{
+    onRightClickFunc = func;
 }
 
 void Button::bindOnFloat(std::function<void()> func)
@@ -96,40 +101,93 @@ void Button::bindOnFloat(std::function<void()> func)
 
 void Button::update(SDL_Event &e, SDL_Rect &canvasRect, SDL_Window *&window)
 {
-    if (chechIsFloat(e, canvasRect, window) && onFloatFunc != nullptr)
-        onFloatFunc();
-    if (chechIsClick(e, canvasRect, window) && onClickFunc != nullptr)
-        onClickFunc();
+    checkIsFloat(e, canvasRect, window);
+    checkIsClick(e, canvasRect, window);
 }
 
-bool Button::chechIsFloat(SDL_Event &e,
+// 负责了onFloat事件的判断和处理
+void Button::checkIsFloat(const SDL_Event &e,
+                          const SDL_Rect &canvasRect,
+                          SDL_Window *&window)
+{
+    if (dstRect != nullptr) {
+        if (e.type == SDL_MOUSEMOTION) {
+            if (SDL_GetWindowFlags(window) & SDL_WINDOW_INPUT_FOCUS) {
+                SDL_Rect actRect{pos.x, pos.y, size.w, size.h};
+                toActualRect(actRect, canvasRect);
+                if (e.motion.x > actRect.x && e.motion.y > actRect.y &&
+                    e.motion.x < (actRect.x + actRect.w) &&
+                    e.motion.y < (actRect.y + actRect.h)) {
+                    if (!isOnFloat) {
+                        // 只会运行一次
+                        // 记录ui
+                        infoCopy_ = info_;
+                        isOnFloat = true;
+                        if (onFloatFunc != nullptr)
+                            onFloatFunc();
+                    }
+                    return;
+                }
+            }
+            if (isOnFloat) {
+                // 结束on float恢复ui
+                info_ = infoCopy_;
+                createTextTexture(info_);
+                createImageTexture(info_);
+                isOnFloat = false;
+            }
+        }
+
+    }
+}
+// 负责onClick事件的判断和处理
+void Button::checkIsClick(SDL_Event &e,
                           SDL_Rect &canvasRect,
                           SDL_Window *&window)
 {
-    if (e.type == SDL_MOUSEMOTION && dstRect != nullptr) {
-        if (SDL_GetWindowFlags(window) & SDL_WINDOW_INPUT_FOCUS) {
-            SDL_Rect actRect{pos.x, pos.y, size.w, size.h};
-            toActualRect(actRect, canvasRect);
-            if (e.motion.x > actRect.x && e.motion.y > actRect.y &&
-                e.motion.x < (actRect.x + actRect.w) &&
-                e.motion.y < (actRect.y + actRect.h)) {
-                isOnFloat = true;
-                return true;
+    if (isOnFloat) {
+        if (e.type == SDL_MOUSEBUTTONDOWN && dstRect != nullptr) {
+            if (onLeftClickFunc != nullptr &&
+                e.button.button == SDL_BUTTON_LEFT) {
+                // 左键按下
+                onLeftClickFunc();
+            }
+            if (onRightClickFunc != nullptr &&
+                e.button.button == SDL_BUTTON_RIGHT) {
+                // 左键按下
+                onRightClickFunc();
             }
         }
     }
-    if (isOnFloat) {
-        //TODO: 结束on float恢复ui
-    }
-    isOnFloat = false;
-    return false;
 }
 
-bool Button::chechIsClick(SDL_Event &e,
-                          SDL_Rect &canvasRect,
-                          SDL_Window *&window)
+void Button::setText(const char *text)
 {
-    //TODO:
-    return true;
+    info_.text = text;
+    createTextTexture(info_);
+}
+void Button::setFont(const char *fontPath)
+{
+    info_.fontPath = fontPath;
+    createTextTexture(info_);
+}
+void Button::setFontSize(int fontSize)
+{
+    info_.fontSize = fontSize;
+    createTextTexture(info_);
+}
+void Button::setImage(const char *path)
+{
+    info_.imgPath = path;
+    createImageTexture(info_);
+}
+void Button::setBgColor(SDL_Color color)
+{
+    info_.bgColor = color;
+}
+void Button::setBorder(SDL_Color borderColor, int width)
+{
+    info_.borderColor = borderColor;
+    info_.borderWidth = width;
 }
 } // namespace tysm

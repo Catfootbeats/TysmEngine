@@ -52,7 +52,7 @@ void ViewBase::updateObject(SDL_Event &e,
                             SDL_Window *&window)
 {
     for (const auto object : m_objects) {
-        object->update(e, canvasData, window);
+        object->update(e, canvasData);
     }
 }
 
@@ -69,4 +69,14 @@ void ViewBase::draw(SDL_Texture* canvas)
     for (const auto &object : m_objects)
         object->draw(canvas);
 }
+
+void ViewBase::setBgm(const char *path)
+{
+    bgm = std::unique_ptr<Mix_Music,MusicDeleter>(Mix_LoadMUS(path));
+    if (bgm == nullptr) {
+        TY_CORE_ERROR("Failed to load bgm: {}", Mix_GetError());
+    }
+    Mix_PlayMusic(bgm.get(), -1);
+}
+
 } // namespace tysm

@@ -15,7 +15,4 @@ void RendererManager::initRenderer(SDL_Renderer *&renderer, SDL_Window *&window)
         TY_CORE_WARN("Linear texture filtering not enabled!");
     SDL_SetRenderDrawBlendMode(renderer,SDL_BLENDMODE_BLEND);
 }
-void RendererManager::destroyRenderer(SDL_Renderer *&renderer){
-    SDL_DestroyRenderer(renderer);
-    }
 } // namespace tysm

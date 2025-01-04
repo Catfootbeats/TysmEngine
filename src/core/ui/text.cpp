@@ -32,7 +32,6 @@ void Text::setFontSize(const int fontSize)
 
 void Text::createTexture(const TextInfo &info)
 {
-    SDL_DestroyTexture(texture);
     font_ = TTF_OpenFont(info.fontPath, info.fontSize);
     if (!font_) {
         TY_CORE_ERROR("Open font failed: {}", TTF_GetError());
@@ -43,7 +42,7 @@ void Text::createTexture(const TextInfo &info)
         TY_CORE_ERROR("Create text surface failed: {}", TTF_GetError());
         return;
     }
-    texture = SDL_CreateTextureFromSurface(info.renderer, surface);
+    texture = std::unique_ptr<SDL_Texture,TextureDeleter>(SDL_CreateTextureFromSurface(info.renderer, surface));
     if (!texture) {
         TY_CORE_ERROR("Create text texture failed: {}", SDL_GetError());
         return;

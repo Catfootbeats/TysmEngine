@@ -12,7 +12,6 @@ struct TyWindowCreateInfo {
 class WindowManager {
 public:
     static void createWindow(SDL_Window *&window, TyWindowCreateInfo info);
-    static void destroyWindow(SDL_Window *&window);
     static void setTitle(SDL_Window *window, const char *title);
     static void setWindowMinSize(SDL_Window *window, int w, int h);
     static void setWindowMaxSize(SDL_Window *window, int w, int h);

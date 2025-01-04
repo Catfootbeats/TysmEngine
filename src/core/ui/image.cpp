@@ -18,14 +18,13 @@ void Image::setImage(const char *path)
 
 void Image::createTexture(const char *path, SDL_Renderer *&renderer)
 {
-    SDL_DestroyTexture(texture);
-    texture = IMG_LoadTexture(renderer, path);
+    texture = std::unique_ptr<SDL_Texture,TextureDeleter>(IMG_LoadTexture(renderer,path));
     if (!texture) {
         TY_CORE_ERROR(IMG_GetError());
         return;
     }
     int width, height;
-    SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
+    SDL_QueryTexture(texture.get(), nullptr, nullptr, &width, &height);
     size.w = width;
     size.h = height;
 }

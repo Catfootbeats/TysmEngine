@@ -13,10 +13,9 @@ public:
     void run();
 
 private:
-    SDL_Event e;
+    SDL_Event e{};
     SDL_Window *mainWindow{nullptr};
     SDL_Renderer *renderer{nullptr};
-    SDL_Texture *texture{nullptr};
 
     std::unique_ptr<ViewManager> viewManager{nullptr};
 

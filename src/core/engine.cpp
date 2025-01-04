@@ -5,7 +5,6 @@
 #include <SDL_ttf.h>
 #include <SDL_video.h>
 #include <SDL_mixer.h>
-#include "audio/audio.cpp"
 
 #include "config.hpp"
 #include "engine.hpp"
@@ -91,7 +90,8 @@ Engine::Engine()
 
 Engine::~Engine()
 {
-    RendererManager::destroyRenderer(renderer);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(mainWindow);
     Mix_Quit();
     TTF_Quit();
     IMG_Quit();
@@ -120,7 +120,6 @@ void Engine::run()
                 default:
                     break;
             }
-            SDL_GetWindowID(mainWindow);
             viewManager->update(e, mainWindow);
         }
         // Render

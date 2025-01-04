@@ -16,36 +16,28 @@ Button::Button(ButtonInfo info)
     createTextTexture(info_);
 }
 
-Button::~Button()
-{ // 析构函数调用先Button 后ty object
-    delete textRect;
-    SDL_DestroyTexture(bgTexture);
-    SDL_DestroyTexture(textTexture);
-}
-
 void Button::draw(SDL_Texture *canvas)
 {
     // 渲染顺序
     // 底色 -> 图片 -> 文字 -> 边框
-    delete dstRect;
-    dstRect = new SDL_Rect{pos.x, pos.y, size.w, size.h};
+    dstRect = SDL_Rect{pos.x, pos.y, size.w, size.h};
     // 底色
     SDL_SetRenderDrawColor(renderer, info_.bgColor.r, info_.bgColor.g,
                            info_.bgColor.b, info_.bgColor.a);
-    SDL_RenderFillRect(renderer, dstRect);
+    SDL_RenderFillRect(renderer, &dstRect);
     // 图片
     if (bgTexture != nullptr)
-        SDL_RenderCopy(renderer, bgTexture, nullptr, dstRect);
+        SDL_RenderCopy(renderer, bgTexture.get(), nullptr, &dstRect);
     // 文字
-    if (textTexture != nullptr && textRect != nullptr) {
-        textRect->x = pos.x + (size.w - textRect->w) / 2;
-        textRect->y = pos.y + (size.h - textRect->h) / 2;
-        SDL_RenderCopy(renderer, textTexture, nullptr, textRect);
+    if (textTexture != nullptr && textRect.w != 0) {
+        textRect.x = pos.x + (size.w - textRect.w) / 2;
+        textRect.y = pos.y + (size.h - textRect.h) / 2;
+        SDL_RenderCopy(renderer, textTexture.get(), nullptr, &textRect);
     }
     // 边框
     SDL_SetRenderDrawColor(renderer, info_.borderColor.r, info_.borderColor.g,
                            info_.borderColor.b, info_.borderColor.a);
-    render::DrawRectWidth(renderer, dstRect, info_.borderWidth);
+    render::DrawRectWidth(renderer, &dstRect, info_.borderWidth);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 }
 
@@ -55,22 +47,22 @@ void Button::createTextTexture(const ButtonInfo &info)
     if (info.fontPath == nullptr || info.text == nullptr) {
         return;
     }
-    font_ = TTF_OpenFont(info.fontPath, info.fontSize);
+    font_ = std::unique_ptr<TTF_Font, FontDeleter>(
+        TTF_OpenFont(info.fontPath, info.fontSize));
     SDL_Surface *surface =
-        TTF_RenderUTF8_Blended(font_, info.text, info.fontColor);
+        TTF_RenderUTF8_Blended(font_.get(), info.text, info.fontColor);
     if (!surface) {
         TY_CORE_ERROR("Create text surface failed: {}", TTF_GetError());
         return;
     }
-    textTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    textTexture = std::unique_ptr<SDL_Texture, TextureDeleter>(
+        SDL_CreateTextureFromSurface(renderer, surface));
     if (!textTexture)
         TY_CORE_ERROR("Create text texture failed: {}", SDL_GetError());
-    delete textRect;
-    textRect = new SDL_Rect;
-    textRect->w = surface->w;
-    textRect->h = surface->h;
+    textRect.w = surface->w;
+    textRect.h = surface->h;
     SDL_FreeSurface(surface);
-    TTF_CloseFont(font_);
+    font_.reset();
 }
 
 void Button::createImageTexture(const ButtonInfo &info)
@@ -78,7 +70,8 @@ void Button::createImageTexture(const ButtonInfo &info)
     //同理 若没路径认为不设定图片
     if (info.imgPath == nullptr)
         return;
-    bgTexture = IMG_LoadTexture(renderer, info.imgPath);
+    bgTexture = std::unique_ptr<SDL_Texture, TextureDeleter>(
+        IMG_LoadTexture(renderer, info.imgPath));
     if (!bgTexture)
         TY_CORE_ERROR("Create {} image texture failed: {}", name,
                       IMG_GetError());
@@ -99,35 +92,32 @@ void Button::bindOnFloat(std::function<void()> func)
     onFloatFunc = func;
 }
 
-void Button::update(SDL_Event &e, SDL_Rect &canvasRect, SDL_Window *&window)
+void Button::update(SDL_Event &e, SDL_Rect &canvasRect)
 {
-    checkIsFloat(e, canvasRect, window);
-    checkIsClick(e, canvasRect, window);
+    checkIsFloat(e, canvasRect);
+    checkIsClick(e);
 }
 
 // 负责了onFloat事件的判断和处理
 void Button::checkIsFloat(const SDL_Event &e,
-                          const SDL_Rect &canvasRect,
-                          SDL_Window *&window)
+                          const SDL_Rect &canvasRect)
 {
-    if (dstRect != nullptr) {
+    if (dstRect.w > 0) {
         if (e.type == SDL_MOUSEMOTION) {
-            if (SDL_GetWindowFlags(window) & SDL_WINDOW_INPUT_FOCUS) {
-                SDL_Rect actRect{pos.x, pos.y, size.w, size.h};
-                toActualRect(actRect, canvasRect);
-                if (e.motion.x > actRect.x && e.motion.y > actRect.y &&
-                    e.motion.x < (actRect.x + actRect.w) &&
-                    e.motion.y < (actRect.y + actRect.h)) {
-                    if (!isOnFloat) {
-                        // 只会运行一次
-                        // 记录ui
-                        infoCopy_ = info_;
-                        isOnFloat = true;
-                        if (onFloatFunc != nullptr)
-                            onFloatFunc();
-                    }
-                    return;
+            SDL_Rect actRect{pos.x, pos.y, size.w, size.h};
+            toActualRect(actRect, canvasRect);
+            if (e.motion.x > actRect.x && e.motion.y > actRect.y &&
+                e.motion.x < (actRect.x + actRect.w) &&
+                e.motion.y < (actRect.y + actRect.h)) {
+                if (!isOnFloat) {
+                    // 只会运行一次
+                    // 记录ui
+                    infoCopy_ = info_;
+                    isOnFloat = true;
+                    if (onFloatFunc != nullptr)
+                        onFloatFunc();
                 }
+                return;
             }
             if (isOnFloat) {
                 // 结束on float恢复ui
@@ -137,16 +127,13 @@ void Button::checkIsFloat(const SDL_Event &e,
                 isOnFloat = false;
             }
         }
-
     }
 }
 // 负责onClick事件的判断和处理
-void Button::checkIsClick(SDL_Event &e,
-                          SDL_Rect &canvasRect,
-                          SDL_Window *&window)
+void Button::checkIsClick(const SDL_Event &e)const
 {
     if (isOnFloat) {
-        if (e.type == SDL_MOUSEBUTTONDOWN && dstRect != nullptr) {
+        if (e.type == SDL_MOUSEBUTTONDOWN && dstRect.x > 0) {
             if (onLeftClickFunc != nullptr &&
                 e.button.button == SDL_BUTTON_LEFT) {
                 // 左键按下

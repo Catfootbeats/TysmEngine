@@ -1,9 +1,11 @@
 #pragma once
 
+#include "utils/deleter.hpp"
 #include "utils/vec2.hpp"
 #include <SDL_events.h>
 #include <SDL_render.h>
 #include <functional>
+#include <memory>
 
 namespace tysm {
 class TyObject {
@@ -19,7 +21,7 @@ public:
                       Position pos,
                       Size size);
     virtual ~TyObject();
-    virtual void update(SDL_Event &e, SDL_Rect &canvasData,SDL_Window*&window) {}
+    virtual void update(SDL_Event &e, SDL_Rect &canvasData) {}
     virtual void draw(SDL_Texture *canvas);
 
     // 只有特定重写了的组件才能触发
@@ -42,7 +44,7 @@ public:
 
 protected:
     SDL_Renderer *&renderer;
-    SDL_Rect *dstRect{nullptr};
-    SDL_Texture *texture{nullptr};
+    SDL_Rect dstRect{};
+    std::unique_ptr<SDL_Texture,TextureDeleter> texture{nullptr};
 };
 } // namespace tysm

@@ -12,6 +12,7 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
     : ViewBase(renderer, viewManager)
 {
     // user
+    setBgm("res/audio/洛天依 - 夏虫.wav");
     // ui部分的编写
     object({new Image({.renderer = renderer,
                        .name = "bg",
@@ -27,13 +28,11 @@ TitleView::TitleView(SDL_Renderer *&renderer, ViewManager &viewManager)
             new Button({.renderer = renderer,
                         .name = "myButton",
                         .size = {1000, 250},
-                        .text = "播放",
+                        .text = "Play",
                         .fontPath = "res/fonts/SourceHanSansCN-Bold.otf",
                         .borderColor = {0, 0, 0, 255}})});
-
     findObjectByName("myButton")->bindOnLeftClick([this] {
-        TY_CORE_INFO("播放");
-        audio("res/audio/洛天依 - 夏虫.wav");
+        TY_INFO("on click");
     });
     findObjectByName("myButton")->bindOnFloat([this] {
         findObjectByName("myButton")->setBgColor({255,255,255,255});

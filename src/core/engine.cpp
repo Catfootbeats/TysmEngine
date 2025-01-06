@@ -81,9 +81,7 @@ Engine::Engine()
     Size size{CANVAS_WIDTH, CANVAS_HEIGHT};
     viewManager = std::make_unique<ViewManager>(
         size, renderer); //初始化传入画布大小，高分辨率渲染，拉伸回低分辨率
-    int w, h;
-    WindowManager::getWindowSize(mainWindow, w, h);
-    viewManager->setCanvas(w, h);
+    viewManager->setCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
     viewManager->route(
         ViewManager::createView<TitleView>(renderer, *viewManager));
 }

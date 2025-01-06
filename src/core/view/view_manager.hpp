@@ -28,7 +28,7 @@ public:
 private:
     std::unique_ptr<IView> currentView{nullptr};
     Size canvasSize;      // 画布大小
-    SDL_Rect canvasRect;// 画布渲染目标rect
+    SDL_Rect canvasRect{};// 画布渲染目标rect
     SDL_Renderer *&renderer; // 大家怎么都有renderer
     SDL_Texture* canvas{nullptr};
 };
